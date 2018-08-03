@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://brave-goldstine-c06d95.netlify.com"
 languageCode = "en-us"
 title = "A Hugo website"
 theme = "airspace-hugo"
