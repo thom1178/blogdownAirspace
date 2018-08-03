@@ -1,4 +1,4 @@
-baseurl = "https://ecstatic-payne-a4fd24.netlify.com/"
+baseurl = "/"
 languageCode = "en-us"
 title = "A Hugo website"
 theme = "airspace-hugo"
