@@ -61,7 +61,7 @@ theme = "airspace-hugo"
    [params.slider]
      enable = true
      title = "A place for Data"
-     subtitle = "I love creating. Books. Websites. Analystics."
+     subtitle = "I love creating. Blogs. Websites. Analystics."
  
    [params.wrapper]
      enable = true
