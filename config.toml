@@ -12,14 +12,14 @@ theme = "airspace-hugo"
    [[menu.header]]
      weight = 2
      name = "Github"
-     url = "#"
+     url = "https://www.github.com/thom1178"
    [[menu.header]]
      weight = 3
      name = "Twitter"
-     url = "/blog"
+     url = "https://www.twitter.com/emptyjamel"
    [[menu.header]]
      weight = 4
-     name = "Service"
+     name = "Services"
      url = "/service"
    [[menu.header]]
      weight = 5
