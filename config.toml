@@ -15,7 +15,7 @@ theme = "airspace-hugo"
      url = "#"
    [[menu.header]]
      weight = 3
-     name = "Blog"
+     name = "Twitter"
      url = "/blog"
    [[menu.header]]
      weight = 4
