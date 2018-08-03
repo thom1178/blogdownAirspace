@@ -1,106 +1,204 @@
-baseurl = "/"
+baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "A Hugo website"
-theme = "airspace-hugo"
+title = "Alpha Church"
+theme = ["Alpha-Church"]
+
+enableEmoji = true
+customCSS = ["", ""]
+
+# Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
-disqusShortname = ""
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
+[taxonomies]
+  tag = "tags"
+  preacher = "preachers"
+  series = "series"
 
+#This theme can generate a multi-level theme.
+#Use the weight= to specify the order of menu items, and the parent= to create a submenu item.
 [menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
 
-  [[menu.header]]
+  [[menu.main]]
+    name = "About"
+    url = "about"
     weight = 2
-    name = "Work"
-    url = "/work"
-  [[menu.header]]
+
+  [[menu.main]]
+    name = "About Us"
+    parent = "About"
+    url = "/about"
+    weight = 1
+
+  [[menu.main]]
+    name = "Leaders"
+    parent = "About"
+    url = "/leaders"
+    weight = 2
+
+  [[menu.main]]
+    name = "Resources"
+    url = "#"
     weight = 3
+
+  [[menu.main]]
+    name = "Sermons"
+    url = "/sermons"
+    parent = "Resources"
+    weight = 1
+
+  [[menu.main]]
     name = "Blog"
-    url = "/blog"
-  [[menu.header]]
-    weight = 4
-    name = "Service"
-    url = "/service"
-  [[menu.header]]
-    weight = 5
+    url = "/posts"
+    parent = "Resources"
+    weight = 2
+
+  [[menu.main]]
     name = "Contact"
     url = "/contact"
-
-  [[menu.footer]]
-    weight = 1
-    name = "About us"
-    url = "#"
-  [[menu.footer]]
-    weight = 2
-    name = "Contact us"
-    url = "#"
-  [[menu.footer]]
-    weight = 3
-    name = "How it works"
-    url = "#"
-  [[menu.footer]]
     weight = 4
-    name = "Blog"
-    url = "#"
-  [[menu.footer]]
-    weight = 5
-    name = "Terms"
-    url = "#"
 
-# The site's parameters
+# Paramaters for the whole site
 [params]
+  title = "Alpha Church"
+  subtitle = "Another Church Theme"
+  author = "Daniel Saunders"
 
-  # If you want to remove the copyright text you need a Themefisher license.
-  # This license is offered with a 50% discount for all Hugo users.
-  # For information see https://github.com/gohugoio/hugoThemes/issues/260
+  bible_popups = true
 
-  dateFormat = "6 January 2006"
+  [params.podcast]
+    title = "Listen to Alpha Church"
+    subtitle = ""
+    summary = "Alpha-Church sermons, talks, messages—podcasted."
+    email = "test@example.com"
+    copyright = "Podcast: [CC0 (public domain)](//creativecommons.org/publicdomain/zero/1.0/)"
+    image = "img/podcast-cover.jpg"
+    category = "Religion & Spirituality"
+    sub_category = "Christianity"
 
-  home = "Home"
-
-  [params.slider]
-    enable = true
-    title = "A digital marketing &amp; design agency"
-    subtitle = "We love the Web and the work we do.<br/>We work closely with our clients to deliver the best possible solutions for their needs"
-
-  [params.wrapper]
-    enable = true
-    title = "About Us"
-    italic = "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics"
-    paragraph = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id"
-
-  [params.blog]
-    enable = true
-    title = "Get The Latest On What We're doing"
-    subtitle = "Catch up with us, anytime and anywhere"
-
-  [params.feature]
-    enable = true
-    title = "We believe in great ideas"
-    content = "Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
-    [params.feature.button]
-      caption = "View Works"
-      url = "#"
-
-  [params.call]
-    enable = true
-    title = "We design delightful digital experiences."
-    paragraph = "Read more about what we do and our philosophy of design. Judge for yourself The work and results we’ve achieved for other clients, and meet our highly experienced Team who just love to design."
+  [params.map]
+    # For Open Street Map widgets
+    latitude = "48.8530"
+    longitude = "2.3498"
+    zoom = "18"
 
   [params.contact]
-    enable = true
-    title = "Drop us a note"
-    subtitle = "Don’t just take our word for it. Check out some of our latest work."
-    [params.contact.form]
-      name = "Your name"
-      email = "Your email"
-      subject = "Your subject"
-      message = "Your message"
-      button = "Send message"
-    [params.contact.box]
-      title = "Stop by for a visit"
-      address = "North Main Street, Brooklyn Australia"
-      email = "Email: contact@mail.com"
-      phone = "Phone: +88 01672 506 744"
-    [params.contact.gmaps]
-      title = "We Also Count in Google Maps"
+    #Use this section to automate contact form.
+    #Set service to either "netlify" or "formspree"
+    #For formspree, please setup an account at https://formspree.io/
+    #For netlify, please read https://www.netlify.com/docs/form-handling/
+    #
+    #If you use netlify, you'll need to set the confirm_page value (or elase users will see a generic netlify response)
+    #If you use formspree, you'll need to set your formspree email address.
+    service = "netlify"
+    confirm_page = "/contact_thanks"
+    # formspree_email=""
+
+  #Paramaters for the home/landing page
+  [params.landing]
+
+    [params.landing.banner]
+      image = "img/banner.jpg"
+
+      [[params.landing.banner.button]]
+        url = "/contact"
+        text = "Get in touch"
+        type = "special"
+
+        [[params.landing.banner.button]]
+        url = "#feature-icons"
+        text = "Find out more"
+
+    #Details for the box below the banner
+    [params.landing.services]
+      title = "Church on Sunday"
+      text = "We meet at 5 am and 2 pm at [6 Parvis Notre-Dame - Pl. Jean-Paul II, 75004 Paris](https://www.openstreetmap.org/way/201611261)."
+      map_location = "Cathédrale Notre-Dame de Paris"
+
+    [params.landing.feature_icons]
+      #These feature icons look best if there's an even number of them.
+      enable = true
+
+      #Accent is a colour defined in the CSS file. Choose between 1 and 5
+      [[params.landing.feature_icons.tile]]
+        icon = "fa-hands-helping"
+        icon_pack = "fas"
+        accent = "1"
+        title = "Serve"
+        text = "Growing people who serve our community."
+
+      [[params.landing.feature_icons.tile]]
+        icon = "fa-users"
+        icon_pack = "fas"
+        accent = "2"
+        title = "Meet"
+        text = "Meeting together to hear."
+
+      [[params.landing.feature_icons.tile]]
+        icon = "fa-comments"
+        icon_pack = "fas"
+        accent = "5"
+        title = "Speak"
+        text = "Speaking encouragement to one-another."
+
+      [[params.landing.feature_icons.tile]]
+        icon = "fa-heartbeat"
+        icon_pack = "fas"
+        accent = "3"
+        title = "Loved"
+        text = "Knowing Love. Being Loved."
+
+    [params.landing.feature_images]
+      #These feature images look best if there's an even number of them.
+      enable = true
+
+      [[params.landing.feature_images.tile]]
+        image = "img/freely-10057.jpg"
+        title = "Childrens' Ministry"
+        text = "A church for the family."
+        url = "/kids"
+        button_text = "Learn more"
+
+      [[params.landing.feature_images.tile]]
+        image = "img/freely-26905.jpg"
+        title = "Midweek Ministries"
+        text = "Want more during the week?"
+        url = "#"
+        button_text="Join a group today!"
+
+    [params.landing.CTA]
+      heading = "Get in touch!"
+      message = "We'd love to hear from you."
+
+    [params.footer]
+      copyright = ["[CC0 (public domain)](//creativecommons.org/publicdomain/zero/1.0/)",
+                   "Design: [HTML5 UP](//html5up.net/alpha)",
+                   "[Hugo Port](//gohugo.io) by [Daniel Saunders](//github.com/funkydan2)"
+                  ]
+
+    [[params.links]]
+      service = "Twitter"
+      icon = "fa-twitter"
+      icon_pack = "fab"
+      link = "//twitter.com/"
+
+    [[params.links]]
+      service = "Facebook"
+      icon = "fa-facebook"
+      icon_pack = "fab"
+      link = "//facebook.com/"
+
+    [[params.links]]
+      service = "Podcast"
+      icon = "fa-podcast"
+      icon_pack = "fas"
+      link = "/sermons/index.xml"
+
+    [[params.links]]
+      service = "Full RSS Feed"
+      icon = "fa-rss"
+      icon_pack = "fas"
+      link = "/index.xml"
