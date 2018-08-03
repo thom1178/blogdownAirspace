@@ -19,8 +19,8 @@ theme = "airspace-hugo"
      url = "https://www.twitter.com/emptyjamel"
    [[menu.header]]
      weight = 4
-     name = "Services"
-     url = "/service"
+     name = "Blog"
+     url = "/blog"
    [[menu.header]]
      weight = 5
      name = "Contact"
