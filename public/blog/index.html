@@ -14,7 +14,7 @@
 
 
 
-<title>Hello R Markdown</title>
+<title>Blogs</title>
 
 <meta name="generator" content="Hugo 0.46" />
 
@@ -89,68 +89,97 @@
   </div>
 </header>
 
-	
-	
-		<main><div id="r-markdown" class="section level1">
-<h1>R Markdown</h1>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>You can embed an R code chunk like this:</p>
-<pre class="r"><code>summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932</code></pre>
-</div>
-<div id="including-plots" class="section level1">
-<h1>Including Plots</h1>
-<p>You can also embed plots. See Figure <a href="#fig:pie">1</a> for example:</p>
-<pre class="r"><code>par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&#39;Sky&#39;, &#39;Sunny side of pyramid&#39;, &#39;Shady side of pyramid&#39;),
-  col = c(&#39;#0292D8&#39;, &#39;#F7EA39&#39;, &#39;#C4B632&#39;),
-  init.angle = -50, border = NA
-)</code></pre>
-<div class="figure"><span id="fig:pie"></span>
-<img src="/blog_files/figure-html/pie-1.png" alt="A fancy pie chart." width="672" />
-<p class="caption">
-Figure 1: A fancy pie chart.
-</p>
-</div>
-</div>
-</main>
-	
 
 	
-		
-
-<section id="call-to-action">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="block">
-          <h2></h2>
-          <p></p>
-          
+<section id="global-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h1>Blogs</h1>
+                    <p></p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
-	
+	<section class="blog section">
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-md-6">
+					<article class="blog-post">
+						
+						<a class="post-title" href="/blog/migrate-from-jekyll/">Migrate from Jekyll</a>
+						<p>
+							Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
+▾ &lt;root&gt;/ ▾ images/ logo.png  should become
+▾ &lt;root&gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.
+						</p>
+						<a href="/blog/migrate-from-jekyll/" class="btn btn-main">Read More</a>
+					</article>
+				</div>
+				
+				<div class="col-md-6">
+					<article class="blog-post">
+						
+						<a class="post-title" href="/blog/linked-post/">Linked post</a>
+						<p>
+							I&rsquo;m a linked post in the menu. You can add other posts by adding the following line to the frontmatter:
+menu = &quot;main&quot;  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris nulla, vestibulum vel auctor sed, posuere eu lorem. Aliquam consequat augue ut accumsan mollis. Suspendisse malesuada sodales tincidunt. Vivamus sed erat ac augue bibendum porta sed id ipsum. Ut mollis mauris eget ligula sagittis cursus. Aliquam id pharetra tellus.
+						</p>
+						<a href="/blog/linked-post/" class="btn btn-main">Read More</a>
+					</article>
+				</div>
+				
+				<div class="col-md-6">
+					<article class="blog-post">
+						
+						<a class="post-title" href="/blog/go-is-for-lovers/">Go is for lovers</a>
+						<p>
+							Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
+This document is a brief primer on using go templates.
+						</p>
+						<a href="/blog/go-is-for-lovers/" class="btn btn-main">Read More</a>
+					</article>
+				</div>
+				
+				<div class="col-md-6">
+					<article class="blog-post">
+						
+						<a class="post-title" href="/blog/hugo-is-for-lovers/">Hugo is for lovers</a>
+						<p>
+							Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at installing hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:
+						</p>
+						<a href="/blog/hugo-is-for-lovers/" class="btn btn-main">Read More</a>
+					</article>
+				</div>
+				
+				<div class="col-md-6">
+					<article class="blog-post">
+						
+						<a class="post-title" href="/blog/creating-a-new-theme/">Creating a new theme</a>
+						<p>
+							Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&rsquo;t cover using CSS to style your theme.
+We&rsquo;ll start with creating a new site with a very basic template.
+						</p>
+						<a href="/blog/creating-a-new-theme/" class="btn btn-main">Read More</a>
+					</article>
+				</div>
+				
+			</div>
+			<div class="col-12 text-center">
+				
+
+			</div>
+		</div>
+	</section>
 
 	
 <footer>
@@ -179,6 +208,5 @@ Figure 1: A fancy pie chart.
 </footer>
 
 
-	
 </body>
 </html>

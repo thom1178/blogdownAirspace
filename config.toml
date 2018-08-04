@@ -89,17 +89,11 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   [params.contact]
     enable = true
     title = "Drop us a note"
-    subtitle = "Don’t just take our word for it. Check out some of our latest work."
-    [params.contact.form]
-      name = "Your name"
-      email = "Your email"
-      subject = "Your subject"
-      message = "Your message"
-      button = "Send message"
+    subtitle = "Don't just take our word for it. Check out some of our latest work."
     [params.contact.box]
-      title = "Stop by for a visit"
-      address = "North Main Street, Brooklyn Australia"
-      email = "Email: contact@mail.com"
-      phone = "Phone: +88 01672 506 744"
+      title = ""
+      address = "1240 N. Broadway Escondido, CA, 92026"
+      email = "Email: contact@jamelt.com"
     [params.contact.gmaps]
       title = "We Also Count in Google Maps"
+      
