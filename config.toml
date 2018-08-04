@@ -27,24 +27,24 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
   [[menu.footer]]
     weight = 1
-    name = "About us"
-    url = "#"
+    name = "Blog"
+    url = "/blog"
   [[menu.footer]]
     weight = 2
-    name = "Contact us"
-    url = "#"
+    name = "Github"
+    url = "https://www.github.com/thom1178"
   [[menu.footer]]
     weight = 3
-    name = "How it works"
-    url = "#"
+    name = "Linkedin"
+    url = "https://www.linkedin.com/in/jamelthomas/"
   [[menu.footer]]
     weight = 4
-    name = "Blog"
-    url = "#"
+    name = "Twitter"
+    url = "https://www.twitter.com/emptyjamel"
   [[menu.footer]]
     weight = 5
-    name = "Terms"
-    url = "#"
+    name = "Contact"
+    url = "/contact"
 
 # The site's parameters
 [params]
@@ -95,5 +95,5 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
       address = "Ontario, CA"
       email = "Email: contact@jamelt.com"
     [params.contact.gmaps]
-      title = "Where I currently Live"
+      title = "Where I currently live"
       
