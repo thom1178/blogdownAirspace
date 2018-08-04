@@ -76,7 +76,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   [params.feature]
     enable = true
     title = "methodolgy"
-    content = "The beautiful thing about data analysis is that a lot of the time, there is not a singe right answer. A model I build could be different than one you build. Therefore, the methodolgy is the most important aspect to any analysis. In order for me to understand your results, I have to know how you got there. This is how I got here."
+    content = "The beautiful thing about data analysis is that a lot of the time, there is not a single right answer. A model I build could be different than one you build. Therefore, the methodolgy is the most important aspect to any analysis. In order for me to understand your results, I have to know how you got there. This is how I got here."
     [params.feature.button]
       caption = "Resume"
       url = "about/resume.pdf"
