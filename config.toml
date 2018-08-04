@@ -92,8 +92,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     subtitle = "Don't just take our word for it. Check out some of our latest work."
     [params.contact.box]
       title = ""
-      address = "1240 N. Broadway Escondido, CA, 92026"
+      address = "Ontario, CA"
       email = "Email: contact@jamelt.com"
     [params.contact.gmaps]
-      title = "We Also Count in Google Maps"
+      title = "Where I currently Live"
       
