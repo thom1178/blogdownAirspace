@@ -66,20 +66,20 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     enable = true
     title = "About"
     italic = '"Hiding within those mounds of data is knowledge that could change the life of a patient, or change the world." - Atul Butte, Stanford '
-    paragraph = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id"
+    paragraph = "I'm Jamel. This blog is about statistics, R, data science and pretty graphs. Sometimes I get interested in a particular topic, and can't get the thing out of my head until I've done some digging. Many of the things on this site is authored by me, but I reference those items that are not. You can find me on linkedin, github, and twitter. The latter is not so much career based, but has funny memes."
 
   [params.blog]
     enable = true
-    title = "Get The Latest On What We're doing"
-    subtitle = "Catch up with us, anytime and anywhere"
+    title = "Get The Latest"
+    subtitle = ""
 
   [params.feature]
     enable = true
-    title = "We believe in great ideas"
-    content = "Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus."
+    title = "Data Surplus"
+    content = ""
     [params.feature.button]
-      caption = "View Works"
-      url = "#"
+      caption = "Resume"
+      url = "/resume"
 
   [params.call]
     enable = true
