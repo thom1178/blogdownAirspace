@@ -12,5 +12,20 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 # Contact
 
-If you would like to get in contact with me, you can do so at contact@jamelt.com
+### If you would like to get in contact with me, you can do so at contact@jamelt.com 
+
+### I am also available via Github, Linkedin and Twitter.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
