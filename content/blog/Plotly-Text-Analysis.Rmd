@@ -1,7 +1,7 @@
 ---
 title: "Plotly for College Analysis"
 author: "Jamel Thomas"
-date: "08/04/2018"
+date: "04 August 2018"
 output: html_document
 ---
 
