@@ -21,7 +21,7 @@ url <- "https://jamelt.com/data/cities-lived.csv"
 
 ```
 
-We will load in the data for the cities and states that I've lived. For the states, `0` indicates that I've never been, `1` indicats that I have visisted, and `2` indicates that I've lived in that state.
+We will load in the data for the cities and states that I've lived. 
 
 ```{r data}
 require(leaflet) #packages
