@@ -81,3 +81,21 @@ ggplotly(g)
 ```
 
 
+```{r scatter2, echo=T, fig= T, fig.align='center', fig.width=10}
+
+g <- ggplot(data = school,
+            aes(x = subject, y = sum, color = ethnicity)) +
+  geom_boxplot() + facet_wrap( ~ ethnicity, ncol=2)
+ggplotly(g)
+
+```
+
+
+```{r scatter3, echo=T, fig= T, fig.align='center', fig.width=10}
+
+g <- ggplot(data = school,
+            aes(x = group, y = sum, fill = subject)) +
+  geom_boxplot() + facet_wrap( ~ subject, ncol=2)+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) #Vertical Axis
+ggplotly(g)
+```
