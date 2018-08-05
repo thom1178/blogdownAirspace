@@ -16,7 +16,7 @@ I began this blog in the summer of 2018, mostly because I needed a place to put 
 
 ```{r dataload, echo = F, eval=T, results="hide"}
 url <- "https://jamelt.com/data/cities-lived.csv"
-url2 <- "https://jamelt.com/data/stateslived.csv"
+# url2 <- "https://jamelt.com/data/stateslived.csv"
 
 
 ```
@@ -29,9 +29,7 @@ require(DT)
 require(rgdal)
 
 cities <- read.csv(url, header = T)
-states <- read.csv(url2, header = T)
 DT::datatable(cities)
-DT::datatable(states)
 ```
 
 Leaflet comes with an easy to use pipeline: `%>%`. For example, given two functions `as.character()` and `as.numeric()`, we could code this two different ways. 
@@ -68,13 +66,6 @@ L %>%
   addCircles(lat = ~lat, lng = ~lon, radius = ~years*1000 , stroke = F, fillOpacity = 1)
 ```
 
-We need to ALSO load the shape files in order to create the states plot!
-
-```{r shapefile}
-
-statesSHP <- readOGR("cb_2017_us_state_500k.shp",
-                  layer = "cb_2017_us_state_500k", GDAL1_integer64_policy = TRUE)
-```
 
 
 
