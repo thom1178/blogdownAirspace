@@ -123,8 +123,7 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
       <guid>/blog/plotly-text-analysis/</guid>
       <description>Plotly for College Analysis In this post, we explore open college data. This dataset includes the name of the college, the aggregated number of people who passed a particular subject by transfer level and race.
 Let’s read out data and take a look:
-There is a wonderful package called DT that creates interactive plots in HTML. It even comes with a search feature. Check it out.
-#Load Packages: require(DT) ## Loading required package: DT require(plotly) ## Loading required package: plotly ## Loading required package: ggplot2 ## ## Attaching package: &amp;#39;plotly&amp;#39; ## The following object is masked from &amp;#39;package:ggplot2&amp;#39;: ## ## last_plot ## The following object is masked from &amp;#39;package:stats&amp;#39;: ## ## filter ## The following object is masked from &amp;#39;package:graphics&amp;#39;: ## ## layout # school &amp;lt;- read.</description>
+There is a wonderful package called DT that creates interactive plots in HTML. It even comes with a search feature.</description>
     </item>
     
   </channel>
