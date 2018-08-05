@@ -22,7 +22,7 @@ There is a wonderful package called `DT` that creates interactive plots in HTML.
 require(DT)
 require(plotly)
 
-school <- read.csv("../../data/CA_REMEDIAL_2014-2016.csv", header = T)
+school <- read.table("../../data/CA_REMEDIAL_2014-2016.txt", header = T)
 
 ```
 
