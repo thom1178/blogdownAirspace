@@ -31,6 +31,17 @@ output: html_document
 <pre><code>## Loading required package: leaflet</code></pre>
 <pre class="r"><code>require(DT)</code></pre>
 <pre><code>## Loading required package: DT</code></pre>
+<pre class="r"><code>require(rgdal)</code></pre>
+<pre><code>## Loading required package: rgdal</code></pre>
+<pre><code>## Loading required package: sp</code></pre>
+<pre><code>## rgdal: version: 1.2-16, (SVN revision 701)
+##  Geospatial Data Abstraction Library extensions to R successfully loaded
+##  Loaded GDAL runtime: GDAL 2.1.2, released 2016/10/24
+##  Path to GDAL shared files: /Library/Frameworks/R.framework/Versions/3.3/Resources/library/rgdal/gdal
+##  GDAL binary built with GEOS: FALSE 
+##  Loaded PROJ.4 runtime: Rel. 4.9.1, 04 March 2015, [PJ_VERSION: 491]
+##  Path to PROJ.4 shared files: /Library/Frameworks/R.framework/Versions/3.3/Resources/library/rgdal/proj
+##  Linking to sp version: 1.2-5</code></pre>
 <pre class="r"><code>cities &lt;- read.csv(url, header = T)
 states &lt;- read.csv(url2, header = T)
 DT::datatable(cities)</code></pre>
@@ -65,4 +76,5 @@ L</code></pre>
   addCircles(lat = ~lat, lng = ~lon, radius = ~years*1000 , stroke = F, fillOpacity = 1)</code></pre>
 <div id="htmlwidget-4" style="width:672px;height:480px;" class="leaflet html-widget"></div>
 <script type="application/json" data-for="htmlwidget-4">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addCircles","args":[[33.980601,34.055103,34.136119,36.600238,32.715738,34.063344,34.096676,33.942466],[-117.375494,-117.749991,-117.865339,-121.894676,-117.161084,-117.650888,-117.719779,-117.229672],[100,9000,2000,4000,2000,500,400,6000],null,null,{"interactive":true,"className":"","stroke":false,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":1},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null,null]}],"limits":{"lat":[32.715738,36.600238],"lng":[-121.894676,-117.161084]}},"evals":[],"jsHooks":[]}</script>
+<p>We need to ALSO load the shape files in order to create the states plot!</p>
 </div>

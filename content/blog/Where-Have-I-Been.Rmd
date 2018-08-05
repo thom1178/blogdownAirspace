@@ -18,6 +18,7 @@ I began this blog in the summer of 2018, mostly because I needed a place to put 
 url <- "https://jamelt.com/data/cities-lived.csv"
 url2 <- "https://jamelt.com/data/stateslived.csv"
 
+
 ```
 
 We will load in the data for the cities and states that I've lived. For the states, `0` indicates that I've never been, `1` indicats that I have visisted, and `2` indicates that I've lived in that state.
@@ -25,6 +26,7 @@ We will load in the data for the cities and states that I've lived. For the stat
 ```{r data}
 require(leaflet) #packages
 require(DT)
+require(rgdal)
 
 cities <- read.csv(url, header = T)
 states <- read.csv(url2, header = T)
@@ -65,3 +67,14 @@ When we add out points, the mapview is automatically updated as well!
 L %>%
   addCircles(lat = ~lat, lng = ~lon, radius = ~years*1000 , stroke = F, fillOpacity = 1)
 ```
+
+We need to ALSO load the shape files in order to create the states plot!
+
+```{r shapefile}
+
+statesSHP <- readOGR("cb_2017_us_state_500k.shp",
+                  layer = "cb_2017_us_state_500k", GDAL1_integer64_policy = TRUE)
+```
+
+
+
