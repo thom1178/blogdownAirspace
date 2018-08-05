@@ -82,18 +82,25 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
       url = "about/resume.pdf"
 
   [params.call]
-    enable = true
+    enable = false
     title = ""
     paragraph = ""
 
   [params.contact]
     enable = true
-    title = "Drop us a note"
-    subtitle = "Don't just take our word for it. Check out some of our latest work."
+    title = "Drop a line"
+    subtitle = "Don’t just take our word for it. Check out some of our latest work."
+    [params.contact.form]
+      name = "Your name"
+      email = "Your email"
+      subject = "Your subject"
+      message = "Your message"
+      button = "Send message"
     [params.contact.box]
-      title = ""
+      title = "Contact"
       address = "Ontario, CA"
       email = "Email: contact@jamelt.com"
     [params.contact.gmaps]
-      title = "Where I currently live"
+      title = "Where am I?"
+
       

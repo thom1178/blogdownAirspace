@@ -1,13 +1,13 @@
 {{ partial "global-header.html" . }}
 
-<!-- contact form start -->
+<!--  contact form start -->
 {{ with .Site.Params.contact }}
 <section id="contact-form">
-<!--   <div class="container">
-    <div class="row">
+ <div class="container">
+    <div class="row" data-netlify="true">
       <div class="col-md-6 col-sm-12">
         <div class="block">
-          <form>
+          <form name = "contact">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="{{ .form.name }}">
             </div>
@@ -30,7 +30,7 @@
           </form>
         </div>
       </div>
-    </div>  -->
+    </div>  
     <div id="contact-box" class="row">
       <div class="col-md-6 col-sm-12">
         <div class="block">
