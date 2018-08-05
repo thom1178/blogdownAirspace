@@ -82,7 +82,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
       url = "about/resume.pdf"
 
   [params.call]
-    enable = false
+    enable = true
     title = ""
     paragraph = ""
 
