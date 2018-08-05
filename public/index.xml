@@ -115,5 +115,16 @@ We&amp;rsquo;ll start with creating a new site with a very basic template.</desc
       <description></description>
     </item>
     
+    <item>
+      <title>Plotly for College Analysis</title>
+      <link>/blog/plotly-text-analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/plotly-text-analysis/</guid>
+      <description>Plotly for College Analysis In this post, we explore open college data. This dataset includes the name of the college, the aggregated number of people who passed a particular subject by transfer level and race.
+Let’s read out data and take a look:
+There is a wonderful package called DT that creates interactive plots in HTML. It even comes with a search feature.</description>
+    </item>
+    
   </channel>
 </rss>

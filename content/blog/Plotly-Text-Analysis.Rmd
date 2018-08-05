@@ -1,0 +1,83 @@
+---
+title: "Plotly for College Analysis"
+author: "Jamel Thomas"
+date: "08/04/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Plotly for College Analysis
+
+In this post, we explore open college data. This dataset includes the name of the college, the aggregated number of people who passed a particular subject by transfer level and race. 
+
+Let's read out data and take a look:
+
+There is a wonderful package called `DT` that creates interactive plots in HTML. It even comes with a search feature. Check it out. 
+
+```{r cars, warning=FALSE, echo=T, results='hide'}
+#Load Packages:
+require(DT)
+require(plotly)
+
+school <- read.csv("../../data/CA_REMEDIAL_2014-2016.csv", header = T)
+
+```
+
+
+```{r dt, warning=F, echo=T, eval=T}
+DT::datatable(school)
+```
+
+
+## ggplot
+The ggplot package is essentially the bread and butter of beautiful and easy to use plots. We will start with `data = school` (duh), and `x = ethnicity, y = sum`. The "sum"" here is just the total number of students who passed given course. 
+
+```{r pressure, echo=T, fig= T, fig.align='center', fig.width=10}
+g <- ggplot(data = school,
+            aes(x = ethnicity, y = sum, fill = group)) + geom_boxplot() + 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) #Vertical Axis
+g
+```
+
+## Interactivity
+In order to make this plot interactive, we have to do something really challenging. Are you ready? Here we go...
+
+Type the following line of code. 
+
+```{r plotly, echo=T, fig= T, fig.align='center', fig.width=10}
+ggplotly(g)
+```
+
+That's it! We can now do all sorts of amazing plots with minimal code! Let's look as some more stuff. 
+
+
+```{r bar, echo=T, fig= T, fig.align='center', fig.width=10}
+g <- ggplot(data = school,
+            aes(x = ethnicity, y = success, fill = ethnicity)) + 
+  geom_bar(stat = "identity")  + 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) #Vertical Axis
+ggplotly(g)
+
+```
+
+Make sure you clean your data!
+
+```{r scatter, echo=T, fig= T, fig.align='center', fig.width=10}
+#Refactor
+school$group <- factor(school$group, 
+                       levels = c("One Level Below Transfer",
+                                  "Two Levels Below Transfer",
+                                  "Three Levels Below Transfer",
+                                  "Four Levels Below Transfer"))
+
+g <- ggplot(data = school,
+            aes(x = students, y = sum, color = ethnicity)) + 
+  geom_point() + facet_wrap( ~ group, ncol=2)
+ggplotly(g)
+
+```
+
+
