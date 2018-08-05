@@ -5,6 +5,7 @@ theme = "airspace-hugo"
 googleAnalytics = "UA-123393502-1"
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+favicon = "https://www.jamelt.com/favicon.png"
 
 [menu]
 
