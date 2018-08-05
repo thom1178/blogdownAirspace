@@ -16,7 +16,7 @@ In this post, we explore open college data. This dataset includes the name of th
 Let's read out data and take a look:
 
 There is a wonderful package called `DT` that creates interactive plots in HTML. It even comes with a search feature. Check it out. 
-```{r cars, warning=FALSE, echo=F, results='hide'}
+```{r dataload, warning=FALSE, echo=F, results='hide'}
 url <- "https://www.jamelt.com/data/CA_REMEDIAL_2014-2016.txt"
 
 ```

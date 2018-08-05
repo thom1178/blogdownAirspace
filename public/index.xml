@@ -71,5 +71,14 @@ Let’s read out data and take a look:
 There is a wonderful package called DT that creates interactive plots in HTML. It even comes with a search feature.</description>
     </item>
     
+    <item>
+      <title>Where have I been?</title>
+      <link>/blog/where-have-i-been/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/where-have-i-been/</guid>
+      <description>Where Am I from? I began this blog in the summer of 2018, mostly because I needed a place to put all of the things I do for fun. What better way than to build your own webssite and put all that crap there?? I have come across this beautiful post from the D3js website. It creates a plot of where the author has been. I will recreate the same plot here, but with the leaflet package in R.</description>
+    </item>
+    
   </channel>
 </rss>

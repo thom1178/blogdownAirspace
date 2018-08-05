@@ -14,7 +14,7 @@
 
 
 
-<title>Blogs</title>
+<title>Where have I been?</title>
 
 <meta name="generator" content="Hugo 0.46" />
 
@@ -90,55 +90,73 @@
 </header>
 
 
+	<div class="post">
+	  
+	  <section class="section" style="border: 1px dotted #ddd;">
+	    <div class="container">
+	      <div class="row">
+	        <div>
+	          <div class="block">
+							
+	            <h1>Where have I been?</h1>
+	            <div class="post-info-wrapper">
+	              <p class="italic">By <span class="bold">Jamel Thomas</span> 
+	               
+	              </p>
+	            </div>
+	            <hr />
+	            <p><script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/datatables-binding/datatables.js"></script>
+<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
+
+
+<div id="where-am-i-from" class="section level2">
+<h2>Where Am I from?</h2>
+<p>I began this blog in the summer of 2018, mostly because I needed a place to put all of the things I do for fun. What better way than to build your own webssite and put all that crap there?? I have come across this beautiful post from the D3js website. It creates a plot of where the author has been. I will recreate the same plot here, but with the leaflet package in R.</p>
+<pre class="r"><code>require(leaflet) #packages</code></pre>
+<pre><code>## Loading required package: leaflet</code></pre>
+<pre class="r"><code>require(DT)</code></pre>
+<pre><code>## Loading required package: DT</code></pre>
+<pre class="r"><code>cities &lt;- read.csv(url, header = T)
+DT::datatable(cities)</code></pre>
+<div id="htmlwidget-1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8"],[0.1,9,2,4,2,0.5,0.4,6],["Riverside","Pomona","Glendora","Monterey","San Diego","Ontario","Claremont","Moreno Valley"],[33.980601,34.055103,34.136119,36.600238,32.715738,34.063344,34.096676,33.942466],[-117.375494,-117.749991,-117.865339,-121.894676,-117.161084,-117.650888,-117.719779,-117.229672]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>years<\/th>\n      <th>place<\/th>\n      <th>lat<\/th>\n      <th>lon<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+</div>
+</p>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </section>
+	</div>
+	<p class="center-text" style="padding: 30px;">
+	  <a class="btn btn-main" href="/blog">Back to blog</a>
+	</p>
+
 	
-<section id="global-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="block">
-                    <h1>Blogs</h1>
-                    <p></p>
-                </div>
-            </div>
+		
+
+<section id="call-to-action">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h2>In God we trust. All others must bring data.</h2>
+          <p>- W. Edwards Deming, Statistician</p>
+          
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
-	<section class="blog section">
-		<div class="container">
-			<div class="row">
-				
-				<div class="col-md-6">
-					<article class="blog-post">
-						
-						<a class="post-title" href="/blog/plotly-text-analysis/">Plotly for College Analysis</a>
-						<p>
-							Plotly for College Analysis In this post, we explore open college data. This dataset includes the name of the college, the aggregated number of people who passed a particular subject by transfer level and race.
-Let’s read out data and take a look:
-There is a wonderful package called DT that creates interactive plots in HTML. It even comes with a search feature.
-						</p>
-						<a href="/blog/plotly-text-analysis/" class="btn btn-main">Read More</a>
-					</article>
-				</div>
-				
-				<div class="col-md-6">
-					<article class="blog-post">
-						
-						<a class="post-title" href="/blog/where-have-i-been/">Where have I been?</a>
-						<p>
-							Where Am I from? I began this blog in the summer of 2018, mostly because I needed a place to put all of the things I do for fun. What better way than to build your own webssite and put all that crap there?? I have come across this beautiful post from the D3js website. It creates a plot of where the author has been. I will recreate the same plot here, but with the leaflet package in R.
-						</p>
-						<a href="/blog/where-have-i-been/" class="btn btn-main">Read More</a>
-					</article>
-				</div>
-				
-			</div>
-			<div class="col-12 text-center">
-				
-
-			</div>
-		</div>
-	</section>
+	
 
 	
 <footer>
@@ -165,7 +183,6 @@ There is a wonderful package called DT that creates interactive plots in HTML. I
     </div>
   </div>
 </footer>
-
 
 </body>
 </html>

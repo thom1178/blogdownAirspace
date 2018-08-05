@@ -13,10 +13,18 @@ knitr::opts_chunk$set(echo = TRUE)
 
 I began this blog in the summer of 2018, mostly because I needed a place to put all of the things I do for fun. What better way than to build your own webssite and put all that crap there?? I have come across this beautiful post from the D3js website. It creates a plot of where the author has been. I will recreate the same plot here, but with the leaflet package in R. 
 
-```{r dataload}
-require(leaflet) #package to 
 
-cities <- read.csv("./")
+```{r dataload, echo = F, eval=T, results="hide"}
+url <- "https://jamelt.com/data/cities-lived.csv"
+
+```
+
+```{r data}
+require(leaflet) #packages
+require(DT)
+
+cities <- read.csv(url, header = T)
+DT::datatable(cities)
 
 ```
 
