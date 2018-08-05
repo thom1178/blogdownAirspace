@@ -415,7 +415,7 @@ font header .navbar-default .navbar-nav li a:hover {
 #global-header .block {
   color: #E3E3E4;
   margin: 0 auto;
-  padding-left: 90px;
+  padding-left: 0px;
   text-align: center;
 }
 #global-header .block h1 {
@@ -754,7 +754,7 @@ font header .navbar-default .navbar-nav li a:hover {
   background-color: #ff432e;
 }
 #contact-box {
-  padding-top: 35px;
+  padding-top: 0px;
   padding-bottom: 58px;
 }
 #contact-box .block img {
@@ -864,4 +864,7 @@ main {
 }
 ul.address-block{
   padding: 0 20%;
+}
+h2#gTitle {
+    margin-top: 0px;
 }
