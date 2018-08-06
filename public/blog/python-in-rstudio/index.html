@@ -14,7 +14,7 @@
 
 
 
-<title>Posts</title>
+<title>Python in R Markdown?</title>
 
 <meta name="generator" content="Hugo 0.46" />
 
@@ -91,79 +91,82 @@
 </header>
 
 
+	<div class="post">
+	  
+	  <section class="section" style="border: 1px dotted #ddd;">
+	    <div class="container">
+	      <div class="row">
+	        <div>
+	          <div class="block">
+							
+	            <h1>Python in R Markdown?</h1>
+	            <div class="post-info-wrapper">
+	              <p class="italic">By <span class="bold">Jamel Thomas</span> 
+	               
+	              </p>
+	            </div>
+	            <hr />
+	            <p><div id="python-in-r-markdown" class="section level2">
+<h2>Python in R Markdown</h2>
+<p>R Markdown supports Python integration with the package <code>reticulate</code>; it is fairly easy to get started. Just install the package and run! Here is a list of all supported languages.</p>
+<pre class="r"><code>names(knitr::knit_engines$get())</code></pre>
+<pre><code>##  [1] &quot;awk&quot;         &quot;bash&quot;        &quot;coffee&quot;      &quot;gawk&quot;        &quot;groovy&quot;     
+##  [6] &quot;haskell&quot;     &quot;lein&quot;        &quot;mysql&quot;       &quot;node&quot;        &quot;octave&quot;     
+## [11] &quot;perl&quot;        &quot;psql&quot;        &quot;Rscript&quot;     &quot;ruby&quot;        &quot;sas&quot;        
+## [16] &quot;scala&quot;       &quot;sed&quot;         &quot;sh&quot;          &quot;stata&quot;       &quot;zsh&quot;        
+## [21] &quot;highlight&quot;   &quot;Rcpp&quot;        &quot;tikz&quot;        &quot;dot&quot;         &quot;c&quot;          
+## [26] &quot;fortran&quot;     &quot;fortran95&quot;   &quot;asy&quot;         &quot;cat&quot;         &quot;asis&quot;       
+## [31] &quot;stan&quot;        &quot;block&quot;       &quot;block2&quot;      &quot;js&quot;          &quot;css&quot;        
+## [36] &quot;sql&quot;         &quot;go&quot;          &quot;python&quot;      &quot;julia&quot;       &quot;theorem&quot;    
+## [41] &quot;lemma&quot;       &quot;definition&quot;  &quot;corollary&quot;   &quot;proposition&quot; &quot;example&quot;    
+## [46] &quot;exercise&quot;    &quot;proof&quot;       &quot;remark&quot;      &quot;solution&quot;</code></pre>
+<pre class="r"><code>install.packages(&quot;reticulate&quot;)</code></pre>
+<p>You will need to use <code>&quot;``` {python} CODE CHUNK HERE ```&quot;</code> to get started.</p>
+<pre class="python"><code>import sys
+print(sys.version)</code></pre>
+<pre><code>## 2.7.10 (default, Oct  6 2017, 22:29:07) 
+## [GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.31)]</code></pre>
+</div>
+<div id="including-plots" class="section level2">
+<h2>Including Plots</h2>
+<p>You can also embed plots, for example:</p>
+<pre class="python"><code>import matplotlib.pyplot as plt
+plt.plot([6,8,10, 12, 21, 44,47, 50, 51])
+plt.show()</code></pre>
+<p><img src="/blog/Python-in-RStudio_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<div id="go-and-create" class="section level3">
+<h3>Go and create!</h3>
+</div>
+</div>
+</p>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </section>
+	</div>
+	<p class="center-text" style="padding: 30px;">
+	  <a class="btn btn-main" href="/blog">Back to blog</a>
+	</p>
+
 	
-<section id="global-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="block">
-                    <h1>Posts</h1>
-                    <p></p>
-                </div>
-            </div>
+		
+
+<section id="call-to-action">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h2>In God we trust. All others must bring data.</h2>
+          <p>- W. Edwards Deming, Statistician</p>
+          
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
-	<section class="blog section">
-		<div class="container">
-			<div class="row">
-				
-				<div class="col-md-6">
-					<article class="blog-post">
-						
-						<a class="post-title" href="/post/blog/">blog</a>
-						<p>
-							This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
- You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.  There are many differences in syntax between Blackfriday&rsquo;s Markdown and Pandoc&rsquo;s Markdown.
-						</p>
-						<a href="/post/blog/" class="btn btn-main">Read More</a>
-					</article>
-				</div>
-				
-				<div class="col-md-6">
-					<article class="blog-post">
-						
-						<a class="post-title" href="/post/2016-12-30-hello-markdown/">A Plain Markdown Post</a>
-						<p>
-							This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
- You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.  There are many differences in syntax between Blackfriday&rsquo;s Markdown and Pandoc&rsquo;s Markdown.
-						</p>
-						<a href="/post/2016-12-30-hello-markdown/" class="btn btn-main">Read More</a>
-					</article>
-				</div>
-				
-				<div class="col-md-6">
-					<article class="blog-post">
-						
-						<a class="post-title" href="/post/2015-07-23-r-rmarkdown/">Hello R Markdown</a>
-						<p>
-							R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.
-						</p>
-						<a href="/post/2015-07-23-r-rmarkdown/" class="btn btn-main">Read More</a>
-					</article>
-				</div>
-				
-				<div class="col-md-6">
-					<article class="blog-post">
-						
-						<a class="post-title" href="/post/2015-01-01-lorem-ipsum/">Lorem Ipsum</a>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-						</p>
-						<a href="/post/2015-01-01-lorem-ipsum/" class="btn btn-main">Read More</a>
-					</article>
-				</div>
-				
-			</div>
-			<div class="col-12 text-center">
-				
-
-			</div>
-		</div>
-	</section>
+	
 
 	
 <footer>
@@ -190,7 +193,6 @@ summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
     </div>
   </div>
 </footer>
-
 
 </body>
 </html>

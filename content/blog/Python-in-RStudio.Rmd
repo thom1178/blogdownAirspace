@@ -1,0 +1,41 @@
+---
+title: "Python in R Markdown?"
+author: "Jamel Thomas"
+date: "8/5/2018"
+output: html_document
+---
+
+## Python in R Markdown
+
+R Markdown supports Python integration with the package `reticulate`; it is fairly easy to get started. Just install the package and run! Here is a list of all supported languages.
+
+```{r eval = T }
+names(knitr::knit_engines$get())
+
+```
+
+```{r eval = F }
+install.packages("reticulate")
+
+```
+
+You will need to use `"``` {python} CODE CHUNK HERE ```" ` to get started.
+
+```{python}
+
+import sys
+print(sys.version)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{python}
+import matplotlib.pyplot as plt
+plt.plot([6,8,10, 12, 21, 44,47, 50, 51])
+plt.show()
+```
+
+
+### Go and create!

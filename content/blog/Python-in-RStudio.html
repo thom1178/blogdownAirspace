@@ -1,0 +1,41 @@
+---
+title: "Python in R Markdown?"
+author: "Jamel Thomas"
+date: "8/5/2018"
+output: html_document
+---
+
+
+
+<div id="python-in-r-markdown" class="section level2">
+<h2>Python in R Markdown</h2>
+<p>R Markdown supports Python integration with the package <code>reticulate</code>; it is fairly easy to get started. Just install the package and run! Here is a list of all supported languages.</p>
+<pre class="r"><code>names(knitr::knit_engines$get())</code></pre>
+<pre><code>##  [1] &quot;awk&quot;         &quot;bash&quot;        &quot;coffee&quot;      &quot;gawk&quot;        &quot;groovy&quot;     
+##  [6] &quot;haskell&quot;     &quot;lein&quot;        &quot;mysql&quot;       &quot;node&quot;        &quot;octave&quot;     
+## [11] &quot;perl&quot;        &quot;psql&quot;        &quot;Rscript&quot;     &quot;ruby&quot;        &quot;sas&quot;        
+## [16] &quot;scala&quot;       &quot;sed&quot;         &quot;sh&quot;          &quot;stata&quot;       &quot;zsh&quot;        
+## [21] &quot;highlight&quot;   &quot;Rcpp&quot;        &quot;tikz&quot;        &quot;dot&quot;         &quot;c&quot;          
+## [26] &quot;fortran&quot;     &quot;fortran95&quot;   &quot;asy&quot;         &quot;cat&quot;         &quot;asis&quot;       
+## [31] &quot;stan&quot;        &quot;block&quot;       &quot;block2&quot;      &quot;js&quot;          &quot;css&quot;        
+## [36] &quot;sql&quot;         &quot;go&quot;          &quot;python&quot;      &quot;julia&quot;       &quot;theorem&quot;    
+## [41] &quot;lemma&quot;       &quot;definition&quot;  &quot;corollary&quot;   &quot;proposition&quot; &quot;example&quot;    
+## [46] &quot;exercise&quot;    &quot;proof&quot;       &quot;remark&quot;      &quot;solution&quot;</code></pre>
+<pre class="r"><code>install.packages(&quot;reticulate&quot;)</code></pre>
+<p>You will need to use <code>&quot;``` {python} CODE CHUNK HERE ```&quot;</code> to get started.</p>
+<pre class="python"><code>import sys
+print(sys.version)</code></pre>
+<pre><code>## 2.7.10 (default, Oct  6 2017, 22:29:07) 
+## [GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.31)]</code></pre>
+</div>
+<div id="including-plots" class="section level2">
+<h2>Including Plots</h2>
+<p>You can also embed plots, for example:</p>
+<pre class="python"><code>import matplotlib.pyplot as plt
+plt.plot([6,8,10, 12, 21, 44,47, 50, 51])
+plt.show()</code></pre>
+<p><img src="/blog/Python-in-RStudio_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<div id="go-and-create" class="section level3">
+<h3>Go and create!</h3>
+</div>
+</div>
