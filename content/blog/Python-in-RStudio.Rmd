@@ -18,13 +18,12 @@ names(knitr::knit_engines$get())
 
 ```{r eval = F }
 install.packages("reticulate")
-
+library(reticulate)
 ```
 
 You will need to use `"``` {python} CODE CHUNK HERE ```" ` to get started.
 
 ```{python}
-
 import sys
 print(sys.version)
 ```
@@ -38,6 +37,22 @@ import matplotlib.pyplot as plt
 plt.plot([6,8,10, 12, 21, 44,47, 50, 51])
 plt.show()
 ```
+
+<!-- And there you have it! You can eve mix and match! If you have a global variable, `y`, we can manipulate it in R or Python. -->
+
+
+<!-- `PYTHON` -->
+<!-- ```{python} -->
+<!-- y = 10 -->
+<!-- print(y) -->
+<!-- ``` -->
+
+
+
+
+
+
+
 
 
 ### Go and create!

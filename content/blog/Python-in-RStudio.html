@@ -22,7 +22,8 @@ output: html_document
 ## [36] &quot;sql&quot;         &quot;go&quot;          &quot;python&quot;      &quot;julia&quot;       &quot;theorem&quot;    
 ## [41] &quot;lemma&quot;       &quot;definition&quot;  &quot;corollary&quot;   &quot;proposition&quot; &quot;example&quot;    
 ## [46] &quot;exercise&quot;    &quot;proof&quot;       &quot;remark&quot;      &quot;solution&quot;</code></pre>
-<pre class="r"><code>install.packages(&quot;reticulate&quot;)</code></pre>
+<pre class="r"><code>install.packages(&quot;reticulate&quot;)
+library(reticulate)</code></pre>
 <p>You will need to use <code>&quot;``` {python} CODE CHUNK HERE ```&quot;</code> to get started.</p>
 <pre class="python"><code>import sys
 print(sys.version)</code></pre>
@@ -36,6 +37,12 @@ print(sys.version)</code></pre>
 plt.plot([6,8,10, 12, 21, 44,47, 50, 51])
 plt.show()</code></pre>
 <p><img src="/blog/Python-in-RStudio_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<!-- And there you have it! You can eve mix and match! If you have a global variable, `y`, we can manipulate it in R or Python. -->
+<!-- `PYTHON` -->
+<!-- ```{python} -->
+<!-- y = 10 -->
+<!-- print(y) -->
+<!-- ``` -->
 <div id="go-and-create" class="section level3">
 <h3>Go and create!</h3>
 </div>
