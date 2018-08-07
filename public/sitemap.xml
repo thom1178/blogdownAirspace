@@ -81,6 +81,10 @@
   </url>
   
   <url>
+    <loc>/blog/sql-and-r/</loc>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>

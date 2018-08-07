@@ -31,6 +31,15 @@ There is a wonderful package called DT that creates interactive plots in HTML. I
     </item>
     
     <item>
+      <title>SQL, Databases &amp; R</title>
+      <link>/blog/sql-and-r/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/sql-and-r/</guid>
+      <description>SQL SQL is a querying language used to manipulate databases. On its own, it is a powerful tool in any Data Scientist’s toolbox. When you pair SQL with R (or Python), you have indespensible foundations to conduct even the basic analytics. This is not so much a lesson on SQL, but a lesson on connecting SQL with R via various packages. Moreover, we will use the packages dbplyr and dplyr to manipulate the datasets in a later blog.</description>
+    </item>
+    
+    <item>
       <title>Where have I been?</title>
       <link>/blog/where-have-i-been/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

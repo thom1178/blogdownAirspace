@@ -1,0 +1,67 @@
+---
+title: "SQL, Databases & R"
+author: "Jamel Thomas"
+date: "8/6/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## SQL 
+
+SQL is a querying language used to manipulate databases. On its own, it is a powerful tool in any Data Scientist's toolbox. When you pair SQL with R (or Python), you have indespensible foundations to conduct even the basic analytics. This is not so much a lesson on SQL, but a lesson on connecting SQL with R via various packages. Moreover, we will use the packages `dbplyr` and `dplyr` to manipulate the datasets in a later blog. 
+
+### Ready..... FIGHT!
+
+## Intro
+When you are using small data, it is fairly easy to store it locally. However, this can get more and more cumbersome as your data grows.
+Using databases instead of storing all of your data on a flat file in memory is a lot more efficient because you can query only the data you need at any given time. 
+
+R has the ability to connect to almost any database type via pacakages. The widely used types can range from MySQL, PostgreSQL and vSQL. We will explore the `schools` database found on my website and github. 
+
+```{r packages, eval=T, echo=FALSE}
+#install.packages(c("RSQLite"))
+url<- "https://jamelt.com/data/CA_REMEDIAL_2014-2016.txt"
+```
+
+https://jamelt.com/data/CA_REMEDIAL_2014-2016.txt
+
+```{r pressure, echo=T}
+library(sqldf)
+
+school <- read.table(url, header = T)
+
+```
+
+Let's first take a look at the data:
+
+```{r}
+head(school)
+str(school)
+```
+
+Now to use SQL, we just add the string query in the `sqldf()` function
+
+
+```{r}
+query <- "SELECT count(college) FROM school WHERE ethnicity = 'African American' GROUP BY subject"
+sqldf(
+  query
+)
+
+
+```
+
+The `GROUP BY` here is an aggregator that will summarize the data by a selected factor of two or more levels. 
+
+```{r}
+library(ggplot2)
+DF = sqldf(
+  "SELECT * FROM school WHERE ethnicity = 'African American' "
+)
+qplot(DF$sum, data = DF, geom = 'histogram') + xlab("Passed Class")
+```
+
+

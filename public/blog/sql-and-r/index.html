@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+
+
+
+
+<title>SQL, Databases &amp; R</title>
+
+<meta name="generator" content="Hugo 0.46" />
+
+
+<link rel="stylesheet" href="/css/owl.carousel.css" />
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/airspace-local-fonts.css" />
+<link rel="stylesheet" href="/css/airspace.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/ionicons.min.css" />
+<link rel="stylesheet" href="/css/animate.css" />
+<link rel="stylesheet" href="/css/responsive.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/min/waypoints.min.js"></script>
+<script src="/js/jquery.counterup.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+</head>
+<body>
+
+	
+<header>
+  <link rel="icon" type="image/png" href="https://www.jamelt.com/favicon.png">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img src="/img/logo.png" alt="Jamel M. Thomas Logo">
+            </a>
+          </div>
+            
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Home</a></li>
+              
+                <li><a href="/blog/">Blog</a></li>
+              
+                <li><a href="https://www.github.com/thom1178/">Github</a></li>
+              
+                <li><a href="https://www.twitter.com/emptyjamel/">Twitter</a></li>
+              
+                <li><a href="/contact/">Contact</a></li>
+              
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+	<div class="post">
+	  
+	  <section class="section" style="border: 1px dotted #ddd;">
+	    <div class="container">
+	      <div class="row">
+	        <div>
+	          <div class="block">
+							
+	            <h1>SQL, Databases &amp; R</h1>
+	            <div class="post-info-wrapper">
+	              <p class="italic">By <span class="bold">Jamel Thomas</span> 
+	               
+	              </p>
+	            </div>
+	            <hr />
+	            <p><div id="sql" class="section level2">
+<h2>SQL</h2>
+<p>SQL is a querying language used to manipulate databases. On its own, it is a powerful tool in any Data Scientist’s toolbox. When you pair SQL with R (or Python), you have indespensible foundations to conduct even the basic analytics. This is not so much a lesson on SQL, but a lesson on connecting SQL with R via various packages. Moreover, we will use the packages <code>dbplyr</code> and <code>dplyr</code> to manipulate the datasets in a later blog.</p>
+<div id="ready..-fight" class="section level3">
+<h3>Ready….. FIGHT!</h3>
+</div>
+</div>
+<div id="intro" class="section level2">
+<h2>Intro</h2>
+<p>When you are using small data, it is fairly easy to store it locally. However, this can get more and more cumbersome as your data grows. Using databases instead of storing all of your data on a flat file in memory is a lot more efficient because you can query only the data you need at any given time.</p>
+<p>R has the ability to connect to almost any database type via pacakages. The widely used types can range from MySQL, PostgreSQL and vSQL. We will explore the <code>schools</code> database found on my website and github.</p>
+<p><a href="https://jamelt.com/data/CA_REMEDIAL_2014-2016.txt" class="uri">https://jamelt.com/data/CA_REMEDIAL_2014-2016.txt</a></p>
+<pre class="r"><code>library(sqldf)</code></pre>
+<pre><code>## Loading required package: gsubfn</code></pre>
+<pre><code>## Loading required package: proto</code></pre>
+<pre><code>## Loading required package: RSQLite</code></pre>
+<pre class="r"><code>school &lt;- read.table(url, header = T)</code></pre>
+<p>Let’s first take a look at the data:</p>
+<pre class="r"><code>head(school)</code></pre>
+<pre><code>##                 college          ethnicity                      group
+## 1    College of Alameda   African American Four Levels Below Transfer
+## 2    College of Alameda              Asian Four Levels Below Transfer
+## 3    College of Alameda           Hispanic Four Levels Below Transfer
+## 4    College of Alameda White Non-Hispanic Four Levels Below Transfer
+## 5 Allan Hancock College   African American Four Levels Below Transfer
+## 6 Allan Hancock College              Asian Four Levels Below Transfer
+##   students sum success subject
+## 1       24   4   16.67 English
+## 2       19   4   21.05 English
+## 3       14   0    0.00 English
+## 4        5   1   20.00 English
+## 5        6   0    0.00 English
+## 6        5   1   20.00 English</code></pre>
+<pre class="r"><code>str(school)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    4702 obs. of  7 variables:
+##  $ college  : Factor w/ 114 levels &quot;Allan Hancock College&quot;,..: 17 17 17 17 1 1 1 1 1 3 ...
+##  $ ethnicity: Factor w/ 8 levels &quot;African American&quot;,..: 1 3 4 8 1 3 4 5 8 1 ...
+##  $ group    : Factor w/ 4 levels &quot;Four Levels Below Transfer&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ students : int  24 19 14 5 6 5 86 2 8 3 ...
+##  $ sum      : int  4 4 0 1 0 1 20 1 0 1 ...
+##  $ success  : num  16.7 21.1 0 20 0 ...
+##  $ subject  : Factor w/ 2 levels &quot;English&quot;,&quot;Math&quot;: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<p>Now to use SQL, we just add the string query in the <code>sqldf()</code> function</p>
+<pre class="r"><code>query &lt;- &quot;SELECT count(college) FROM school WHERE ethnicity = &#39;African American&#39; GROUP BY subject&quot;
+sqldf(
+  query
+)</code></pre>
+<pre><code>##   count(college)
+## 1            281
+## 2            388</code></pre>
+<p>The <code>GROUP BY</code> here is an aggregator that will summarize the data by a selected factor of two or more levels.</p>
+<pre class="r"><code>library(ggplot2)
+DF = sqldf(
+  &quot;SELECT * FROM school WHERE ethnicity = &#39;African American&#39; &quot;
+)
+qplot(DF$sum, data = DF, geom = &#39;histogram&#39;) + xlab(&quot;Passed Class&quot;)</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="/blog/SQL-And-R_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+</p>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </section>
+	</div>
+	<p class="center-text" style="padding: 30px;">
+	  <a class="btn btn-main" href="/blog">Back to blog</a>
+	</p>
+
+	
+		
+
+<section id="call-to-action">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h2>In God we trust. All others must bring data.</h2>
+          <p>- W. Edwards Deming, Statistician</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+	
+
+	
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="footer-manu">
+          <ul>
+            
+            <li><a href="/blog">Blog</a></li>
+            
+            <li><a href="https://www.github.com/thom1178">Github</a></li>
+            
+            <li><a href="https://www.linkedin.com/in/jamelthomas/">Linkedin</a></li>
+            
+            <li><a href="https://www.twitter.com/emptyjamel">Twitter</a></li>
+            
+            <li><a href="/contact">Contact</a></li>
+            
+          </ul>
+        </div>
+       <p>contact@jamelt.com</p> 
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
