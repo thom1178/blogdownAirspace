@@ -1,5 +1,5 @@
 ---
-title: "Time Series Prediction of Average Housing Price"
+title: "Dashboards with Flexdashboard"
 author: "Jamel Thomas"
 date: "8/7/2018"
 output: html_document
@@ -9,9 +9,17 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Zillow Housing Data
+## Flex Dashboards
 
-There is no content here yet. Just wait!
+Everyone knows high-level languages are wonderful. The issues of yester-year are long gone; we no longer have to build dashboards from scratch. Being able to query data, and display directly thorugh R is here, and I don't see it going anywhere anytime soon. 
 
-THis is a Temp File
+Flexdashboard is an open source package in R that allows users to display dashboards directly in browser. It also has publishing support through RStudio. Assuming you have moderate traffic (like me), it's perfect!
 
+### Let's get started:
+
+```{r}
+#install.packages("flexdashboard")
+require(flexdashboard)
+```
+
+![](https://jamelt.com/img/logo.png)

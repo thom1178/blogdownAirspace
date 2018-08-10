@@ -61,6 +61,16 @@ summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
     </item>
     
     <item>
+      <title>Dashboards with Flexdashboard</title>
+      <link>/blog/time-series-for-avg-house/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/time-series-for-avg-house/</guid>
+      <description>Flex Dashboards Everyone knows high-level languages are wonderful. The issues of yester-year are long gone; we no longer have to build dashboards from scratch. Being able to query data, and display directly thorugh R is here, and I don’t see it going anywhere anytime soon.
+Flexdashboard is an open source package in R that allows users to display dashboards directly in browser. It also has publishing support through RStudio. Assuming you have moderate traffic (like me), it’s perfect!</description>
+    </item>
+    
+    <item>
       <title>Plotly for College Analysis</title>
       <link>/blog/plotly-text-analysis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -87,17 +97,6 @@ There is a wonderful package called DT that creates interactive plots in HTML. I
       
       <guid>/blog/sql-and-r/</guid>
       <description>SQL SQL is a querying language used to manipulate databases. On its own, it is a powerful tool in any Data Scientist’s toolbox. When you pair SQL with R (or Python), you have indespensible foundations to conduct even the basic analytics. This is not so much a lesson on SQL, but a lesson on connecting SQL with R via various packages. Moreover, we will use the packages dbplyr and dplyr to manipulate the datasets in a later blog.</description>
-    </item>
-    
-    <item>
-      <title>Time Series Prediction of Average Housing Price</title>
-      <link>/blog/time-series-for-avg-house/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/time-series-for-avg-house/</guid>
-      <description>Zillow Housing Data There is no content here yet. Just wait!
-THis is a Temp File
- </description>
     </item>
     
     <item>

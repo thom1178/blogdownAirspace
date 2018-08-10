@@ -14,7 +14,7 @@
 
 
 
-<title>Dashboards with Flexdashboard</title>
+<title>Flexdashboard Example</title>
 
 <meta name="generator" content="Hugo 0.46" />
 
@@ -99,26 +99,40 @@
 	        <div>
 	          <div class="block">
 							
-	            <h1>Dashboards with Flexdashboard</h1>
+	            <h1>Flexdashboard Example</h1>
 	            <div class="post-info-wrapper">
-	              <p class="italic">By <span class="bold">Jamel Thomas</span> 
+	              <p class="italic">By <span class="bold"></span> 
 	               
 	              </p>
 	            </div>
 	            <hr />
-	            <p><div id="flex-dashboards" class="section level2">
-<h2>Flex Dashboards</h2>
-<p>Everyone knows high-level languages are wonderful. The issues of yester-year are long gone; we no longer have to build dashboards from scratch. Being able to query data, and display directly thorugh R is here, and I don’t see it going anywhere anytime soon.</p>
-<p>Flexdashboard is an open source package in R that allows users to display dashboards directly in browser. It also has publishing support through RStudio. Assuming you have moderate traffic (like me), it’s perfect!</p>
-<div id="lets-get-started" class="section level3">
-<h3>Let’s get started:</h3>
-<pre class="r"><code>#install.packages(&quot;flexdashboard&quot;)
-require(flexdashboard)</code></pre>
-<pre><code>## Loading required package: flexdashboard</code></pre>
-<div class="figure">
-<img src="https://jamelt.com/img/logo.png" />
+	            <p><script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/leaflet/leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet/leaflet.js"></script>
+<link href="/rmarkdown-libs/leafletfix/leafletfix.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4-compressed.js"></script>
+<script src="/rmarkdown-libs/Proj4Leaflet/proj4leaflet.js"></script>
+<link href="/rmarkdown-libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/leaflet-binding/leaflet.js"></script>
 
+
+<div id="column" class="section level2" data-width="650">
+<h2>Column</h2>
+<div id="chart-a" class="section level3">
+<h3>Chart A</h3>
+<pre class="r"><code>leaflet() %&gt;% addTiles </code></pre>
+<div id="htmlwidget-1" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}]},"evals":[],"jsHooks":[]}</script>
 </div>
+</div>
+<div id="column-1" class="section level2" data-width="350">
+<h2>Column</h2>
+<div id="chart-b" class="section level3">
+<h3>Chart B</h3>
+</div>
+<div id="chart-c" class="section level3">
+<h3>Chart C</h3>
 </div>
 </div>
 </p>
