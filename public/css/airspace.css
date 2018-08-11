@@ -872,3 +872,6 @@ h2#gTitle {
     color: #4a4cd0;
     background-color: transparent;
 }
+.container {
+    padding-top: 5%;
+}
