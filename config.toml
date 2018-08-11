@@ -66,7 +66,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     enable = true
     title = "About"
     italic = '"Hiding within those mounds of data is knowledge that could change the life of a patient, or change the world." - Atul Butte, Stanford '
-    paragraph = "I'm Jamel. This blog is about statistics, R, data science and pretty graphs. Sometimes I get interested in a particular topic, and can't get the thing out of my head until I've done some digging. Many of the things on this site are authored by me, but I reference those items that are not. You can find me on LinkedIn, Github, and Twitter. The latter is not so much career based but has funny memes."
+    paragraph = "I'm Jamel. This blog is about statistics, R, data science and pretty graphs. Sometimes I get interested in a particular topic, and can't get the thing out of my head until I've done some digging. Many of the things on this site are authored by me, but I reference those items that are not. You can find me on LinkedIn, Github, and Twitter. The latter is not so much career based but has funny memes. I built this blog with the package 'blogdown', and you can find the source code on my github."
 
   [params.blog]
     enable = true
