@@ -40,6 +40,6 @@ The resulting document will be a flexdashboard template. Within the header of th
 
 Once you have the template, you can start adding interactive plots via plotly and leaflet! It's fairly simple to get started, and makes your plot look a lot more professional!
 
-
+The following plot is a flexdashboard of Alternative Fuels Stations in the United States. 
 #Result
 <iframe src="https://jamelt.com/flex-dashboard-example" width="100%" height="780" style="border: none;"></iframe>
