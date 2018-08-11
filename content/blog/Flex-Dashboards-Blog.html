@@ -22,7 +22,21 @@ require(flexdashboard)</code></pre>
 <p>Once you’ve done that, choose <code>flexdashboard</code>.</p>
 <!-- ![](https://jamelt.com/images/flexdashboard-newfile.png | width=100) -->
 <p><img src="https://jamelt.com/images/flexdashboard-newfile.png" width="100%"  /> <br/><br/> The resulting document will be a flexdashboard template. Within the header of the file, you can include all of the startup code, ie. loading packages, loading flatfiles etc…</p>
-<p>Once you have the template, you can start adding interactive plots via plotly and leaflet! It’s fairly simple to get started, and makes your plot look a lot more professional!</p>
-<p>The following plot is a flexdashboard of Alternative Fuels Stations in the United States. #Result <iframe src="https://jamelt.com/flex-dashboard-example" width="100%" height="780" style="border: none;"></iframe></p>
+<p><img src="https://jamelt.com/images/dash.png" width="100%"  /></p>
+<p>Once you have the template, you can start adding interactive plots via plotly and leaflet! It’s fairly simple to get started, and makes your blog look a lot more professional!</p>
+<p>Some sample code added here is from an alternative fuel dataset.</p>
+<pre class="r"><code>Chargers$Latitude &lt;- Chargers$Latitude %&gt;% as.character() %&gt;% as.numeric()
+Chargers$Longitude &lt;- Chargers$Longitude %&gt;% as.character() %&gt;% as.numeric() #Convert to numeric
+
+viewLon &lt;- mean(Chargers$Longitude, na.rm = T) 
+viewLat &lt;- mean(Chargers$Latitude, na.rm = T) #Get Avg Lon &amp; Lat for View
+
+factpal &lt;- colorFactor(topo.colors(5), Chargers$Fuel.Type.Code) #Create color palette
+
+leaflet(Chargers) %&gt;% 
+  addCircleMarkers(lng = ~Longitude, lat = ~Latitude, radius = 1, stroke = F,color = ~factpal(Fuel.Type.Code) )%&gt;% 
+                     addTiles() %&gt;% setView(lng = viewLon, lat = viewLat, zoom = 4) %&gt;% 
+  addLegend(pal = factpal, values = ~Fuel.Type.Code, opacity = 1) #Plot to put into first r block</code></pre>
+<p>The following plot is a flexdashboard of Alternative Fuels Stations in the United States. #Result <iframe src="https://jamelt.com/flex-dashboard-example" width="100%" height="1200" style="border: none;"></iframe></p>
 </div>
 </div>

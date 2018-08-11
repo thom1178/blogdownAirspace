@@ -38,8 +38,27 @@ In order to build a Flexdashboard, you need start a new R Markdown document, and
 <br/><br/>
 The resulting document will be a flexdashboard template. Within the header of the file, you can include all of the startup code, ie. loading packages, loading flatfiles etc...
 
-Once you have the template, you can start adding interactive plots via plotly and leaflet! It's fairly simple to get started, and makes your plot look a lot more professional!
+<img src="https://jamelt.com/images/dash.png" width="100%"  />
+
+Once you have the template, you can start adding interactive plots via plotly and leaflet! It's fairly simple to get started, and makes your blog look a lot more professional!
+
+Some sample code added here is from an alternative fuel dataset.
+```{r, eval=F}
+Chargers$Latitude <- Chargers$Latitude %>% as.character() %>% as.numeric()
+Chargers$Longitude <- Chargers$Longitude %>% as.character() %>% as.numeric() #Convert to numeric
+
+viewLon <- mean(Chargers$Longitude, na.rm = T) 
+viewLat <- mean(Chargers$Latitude, na.rm = T) #Get Avg Lon & Lat for View
+
+factpal <- colorFactor(topo.colors(5), Chargers$Fuel.Type.Code) #Create color palette
+
+leaflet(Chargers) %>% 
+  addCircleMarkers(lng = ~Longitude, lat = ~Latitude, radius = 1, stroke = F,color = ~factpal(Fuel.Type.Code) )%>% 
+                     addTiles() %>% setView(lng = viewLon, lat = viewLat, zoom = 4) %>% 
+  addLegend(pal = factpal, values = ~Fuel.Type.Code, opacity = 1) #Plot to put into first r block
+```
+
 
 The following plot is a flexdashboard of Alternative Fuels Stations in the United States. 
 #Result
-<iframe src="https://jamelt.com/flex-dashboard-example" width="100%" height="780" style="border: none;"></iframe>
+<iframe src="https://jamelt.com/flex-dashboard-example" width="100%" height="1200" style="border: none;"></iframe>
