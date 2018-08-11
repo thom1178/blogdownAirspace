@@ -1,5 +1,5 @@
 ---
-title: "Flexdashboard Example"
+title: "Alternative Fuel Stations"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -17,6 +17,9 @@ Chargers$Longitude <- Chargers$Longitude %>% as.character() %>% as.numeric()
 
 viewLon <- mean(Chargers$Longitude, na.rm = T)
 viewLat <- mean(Chargers$Latitude, na.rm = T)
+
+factpal <- colorFactor(topo.colors(5), Chargers$Fuel.Type.Code)
+
 ```
 
 Column {data-width=650}
@@ -25,21 +28,61 @@ Column {data-width=650}
 ### Alternative Fuel Stations
 
 ```{r}
-leaflet(Chargers) %>% addCircleMarkers(lng = ~Longitude, lat = ~Latitude, radius = 1, stroke = F) %>% addTiles() %>% setView(lng = viewLon, lat = viewLat, zoom = 4)
+leaflet(Chargers) %>% 
+  addCircleMarkers(lng = ~Longitude, lat = ~Latitude, radius = 1, stroke = F,color = ~factpal(Fuel.Type.Code) )%>% 
+                     addTiles() %>% setView(lng = viewLon, lat = viewLat, zoom = 4) %>% 
+  addLegend(pal = factpal, values = ~Fuel.Type.Code, opacity = 1)
+
 ```
 
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Types of Fuel Stations
 
 ```{r}
+temp <- table(Chargers$Fuel.Type.Code)
+indx <- order(temp, decreasing = T)
+levls <- names(temp)
+temp <- data.frame(temp)
+temp$Var1 <- factor(temp$Var1,
+                                  levels = levls[indx])
+g <- ggplot(temp, aes(x = Var1 , y = Freq)) + geom_bar(stat = "identity") + xlab("Fuel Type") +
+  ylab("Frequency")
+ggplotly(g)
+
 
 ```
 
 ### Chart C
 
 ```{r}
+var <- Chargers$Fuel.Type.Code  # the categorical data 
+
+nrows <- 10
+df <- expand.grid(y = 1:nrows, x = 1:nrows)
+categ_table <- round(table(var) * ((nrows*nrows)/(length(var))))
+categ_table[5] <- 1
+
+df$category <- factor(rep(names(categ_table), categ_table))  
+# NOTE: if sum(categ_table) is not 100 (i.e. nrows^2), it will need adjustment to make the sum to 100.
+
+## Plot
+g <- ggplot(df, aes(x = x, y = y, fill = category)) + 
+        geom_tile(color = "black", size = 0.5) +
+        scale_x_continuous(expand = c(0, 0)) +
+        scale_y_continuous(expand = c(0, 0), trans = 'reverse') +
+        scale_fill_brewer(palette = "Set3") +
+        labs(title="Fuel Types", subtitle="",
+             caption="Source: Fuel Types") + 
+        theme(
+              plot.title = element_text(size = rel(1.2)),
+              axis.text = element_blank(),
+              axis.title = element_blank(),
+              axis.ticks = element_blank(),
+              legend.title = element_blank(),
+              legend.position = "right")
+ggplotly(g)
 
 ```
 
