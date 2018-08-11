@@ -1,0 +1,31 @@
+---
+title: "Dashboards with Flexdashboard"
+author: "Jamel Thomas"
+date: "8/7/2018"
+output: html_document
+---
+
+
+
+<div id="flex-dashboards" class="section level2">
+<h2>Flex Dashboards:</h2>
+<p>Everyone knows high-level languages are wonderful. The issues of yester-year are long gone; we no longer have to build dashboards from scratch. Being able to query data, and display directly thorugh R is here, and I don’t see it going anywhere anytime soon.</p>
+<p>Flexdashboard is an open source package in R that allows users to display dashboards directly in browser. It also has publishing support through RStudio. Assuming you have moderate traffic (like me), it’s perfect!</p>
+<p>You can take a look at the dashboard I build here: <a href="https://jamelt.com/flex-dashboard-example" class="uri">https://jamelt.com/flex-dashboard-example</a></p>
+<div id="lets-get-started" class="section level3">
+<h3>Let’s get started:</h3>
+<pre class="r"><code>#install.packages(&quot;flexdashboard&quot;)
+require(flexdashboard)</code></pre>
+<pre><code>## Loading required package: flexdashboard</code></pre>
+<p>In order to build a Flexdashboard, you need start a new R Markdown document, and choose <code>From Template</code>.</p>
+<p><img src="https://jamelt.com/images/flexdashboar-Start.png" width="100%"  /></p>
+<p>Once you’ve done that, choose <code>flexdashboard</code>.</p>
+<!-- ![](https://jamelt.com/images/flexdashboard-newfile.png | width=100) -->
+<p><img src="https://jamelt.com/images/flexdashboard-newfile.png" width="100%"  /> <br/><br/> The resulting document will be a flexdashboard template. Within the header of the file, you can include all of the startup code, ie. loading packages, loading flatfiles etc…</p>
+</div>
+</div>
+<div id="result" class="section level1">
+<h1>Result</h1>
+<iframe src="https://jamelt.com/flex-dashboard-example" width="100%" height="780" style="border: none;">
+</iframe>
+</div>

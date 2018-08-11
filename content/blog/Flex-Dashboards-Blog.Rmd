@@ -1,0 +1,42 @@
+---
+title: "Dashboards with Flexdashboard"
+author: "Jamel Thomas"
+date: "8/7/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Flex Dashboards: 
+
+Everyone knows high-level languages are wonderful. The issues of yester-year are long gone; we no longer have to build dashboards from scratch. Being able to query data, and display directly thorugh R is here, and I don't see it going anywhere anytime soon. 
+
+Flexdashboard is an open source package in R that allows users to display dashboards directly in browser. It also has publishing support through RStudio. Assuming you have moderate traffic (like me), it's perfect!
+
+You can take a look at the dashboard I build here:
+https://jamelt.com/flex-dashboard-example
+
+### Let's get started:
+
+```{r}
+#install.packages("flexdashboard")
+require(flexdashboard)
+```
+In order to build a Flexdashboard, you need start a new R Markdown document, and choose `From Template`. 
+
+<img src="https://jamelt.com/images/flexdashboar-Start.png" width="100%"  />
+
+ 
+ 
+ Once you've done that, choose `flexdashboard`. 
+
+<!-- ![](https://jamelt.com/images/flexdashboard-newfile.png | width=100) -->
+
+<img src="https://jamelt.com/images/flexdashboard-newfile.png" width="100%"  />
+<br/><br/>
+The resulting document will be a flexdashboard template. Within the header of the file, you can include all of the startup code, ie. loading packages, loading flatfiles etc...
+
+#Result
+<iframe src="https://jamelt.com/flex-dashboard-example" width="100%" height="780" style="border: none;"></iframe>

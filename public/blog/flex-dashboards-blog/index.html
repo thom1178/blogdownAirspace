@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+
+
+
+
+<title>Dashboards with Flexdashboard</title>
+
+<meta name="generator" content="Hugo 0.46" />
+
+
+<link rel="stylesheet" href="/css/owl.carousel.css" />
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/css/airspace-local-fonts.css" />
+<link rel="stylesheet" href="/css/airspace.css" />
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/css/ionicons.min.css" />
+<link rel="stylesheet" href="/css/animate.css" />
+<link rel="stylesheet" href="/css/responsive.css" />
+<link rel="stylesheet" href="/css/syntax.css" />
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/min/waypoints.min.js"></script>
+<script src="/js/jquery.counterup.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+</head>
+<body>
+
+	
+<header>
+  <link rel="icon" type="image/png" href="https://www.jamelt.com/favicon.png">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img src="/img/logo.png" alt="Jamel M. Thomas Logo">
+            </a>
+          </div>
+            
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Home</a></li>
+              
+                <li><a href="/blog/">Blog</a></li>
+              
+                <li><a href="https://www.github.com/thom1178/">Github</a></li>
+              
+                <li><a href="https://www.twitter.com/emptyjamel/">Twitter</a></li>
+              
+                <li><a href="/contact/">Contact</a></li>
+              
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+	<div class="post">
+	  
+	  <section class="section" style="border: 1px dotted #ddd;">
+	    <div class="container">
+	      <div class="row">
+	        <div>
+	          <div class="block">
+							
+	            <h1>Dashboards with Flexdashboard</h1>
+	            <div class="post-info-wrapper">
+	              <p class="italic">By <span class="bold">Jamel Thomas</span> 
+	               
+	              </p>
+	            </div>
+	            <hr />
+	            <p><div id="flex-dashboards" class="section level2">
+<h2>Flex Dashboards:</h2>
+<p>Everyone knows high-level languages are wonderful. The issues of yester-year are long gone; we no longer have to build dashboards from scratch. Being able to query data, and display directly thorugh R is here, and I don’t see it going anywhere anytime soon.</p>
+<p>Flexdashboard is an open source package in R that allows users to display dashboards directly in browser. It also has publishing support through RStudio. Assuming you have moderate traffic (like me), it’s perfect!</p>
+<p>You can take a look at the dashboard I build here: <a href="https://jamelt.com/flex-dashboard-example" class="uri">https://jamelt.com/flex-dashboard-example</a></p>
+<div id="lets-get-started" class="section level3">
+<h3>Let’s get started:</h3>
+<pre class="r"><code>#install.packages(&quot;flexdashboard&quot;)
+require(flexdashboard)</code></pre>
+<pre><code>## Loading required package: flexdashboard</code></pre>
+<p>In order to build a Flexdashboard, you need start a new R Markdown document, and choose <code>From Template</code>.</p>
+<p><img src="https://jamelt.com/images/flexdashboar-Start.png" width="100%"  /></p>
+<p>Once you’ve done that, choose <code>flexdashboard</code>.</p>
+<!-- ![](https://jamelt.com/images/flexdashboard-newfile.png | width=100) -->
+<p><img src="https://jamelt.com/images/flexdashboard-newfile.png" width="100%"  /> <br/><br/> The resulting document will be a flexdashboard template. Within the header of the file, you can include all of the startup code, ie. loading packages, loading flatfiles etc…</p>
+</div>
+</div>
+<div id="result" class="section level1">
+<h1>Result</h1>
+<iframe src="https://jamelt.com/flex-dashboard-example" width="100%" height="780" style="border: none;">
+</iframe>
+</div>
+</p>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </section>
+	</div>
+	<p class="center-text" style="padding: 30px;">
+	  <a class="btn btn-main" href="/blog">Back to blog</a>
+	</p>
+
+	
+		
+
+<section id="call-to-action">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h2>In God we trust. All others must bring data.</h2>
+          <p>- W. Edwards Deming, Statistician</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+	
+
+	
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="footer-manu">
+          <ul>
+            
+            <li><a href="/blog">Blog</a></li>
+            
+            <li><a href="https://www.github.com/thom1178">Github</a></li>
+            
+            <li><a href="https://www.linkedin.com/in/jamelthomas/">Linkedin</a></li>
+            
+            <li><a href="https://www.twitter.com/emptyjamel">Twitter</a></li>
+            
+            <li><a href="/contact">Contact</a></li>
+            
+          </ul>
+        </div>
+       <p>contact@jamelt.com</p> 
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

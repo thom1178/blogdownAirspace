@@ -10,15 +10,22 @@ output:
 library(flexdashboard)
 library(leaflet)
 library(plotly)
+Chargers <- read.csv( "/Users/Jamel/Desktop/Kigt /Alternative_Fuel_Station_Location.csv",
+                      header = T)
+Chargers$Latitude <- Chargers$Latitude %>% as.character() %>% as.numeric()
+Chargers$Longitude <- Chargers$Longitude %>% as.character() %>% as.numeric()
+
+viewLon <- mean(Chargers$Longitude, na.rm = T)
+viewLat <- mean(Chargers$Latitude, na.rm = T)
 ```
 
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Alternative Fuel Stations
 
 ```{r}
-leaflet() %>% addTiles 
+leaflet(Chargers) %>% addCircleMarkers(lng = ~Longitude, lat = ~Latitude, radius = 1, stroke = F) %>% addTiles() %>% setView(lng = viewLon, lat = viewLat, zoom = 4)
 ```
 
 Column {data-width=350}
