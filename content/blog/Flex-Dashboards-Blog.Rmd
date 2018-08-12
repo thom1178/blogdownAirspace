@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Flex Dashboards: 
 
-Everyone knows high-level languages are wonderful. The issues of yester-year are long gone; we no longer have to build dashboards from scratch. Being able to query data, and display directly thorugh R is here, and I don't see it going anywhere anytime soon. 
+Everyone knows high-level languages are wonderful. The issues of yester-year are long gone; we no longer have to build dashboards from scratch. Being able to query data, and display directly through R is here, and I don't see it going anywhere anytime soon. 
 
 Flexdashboard is an open source package in R that allows users to display dashboards directly in browser. It also has publishing support through RStudio. Assuming you have moderate traffic (like me), it's perfect!
 
