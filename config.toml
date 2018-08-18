@@ -59,8 +59,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
   [params.slider]
     enable = true
-    title = "A small data directory"
-    subtitle = "A place for big ideas."
+    title = "A Small Data d]Directory"
+    subtitle = "A place for BIG ideas."
 
   [params.wrapper]
     enable = true
