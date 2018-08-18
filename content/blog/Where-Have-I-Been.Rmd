@@ -63,7 +63,7 @@ When we add out points, the mapview is automatically updated as well!
 
 ```{r mapview, fig.align='center'}
 L %>%
-  addCircles(lat = ~lat, lng = ~lon, radius = ~years*1000 , stroke = F, fillOpacity = 1)
+  addCircles(lat = ~lat, lng = ~lon, radius = ~years*1000 , stroke = F, fillOpacity = .5)
 ```
 
 

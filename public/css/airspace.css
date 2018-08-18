@@ -38,6 +38,9 @@ p img {
 .datatables.html-widget.html-widget-static-bound {
     display: none;
 }
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-retina.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom{
+  width:100% !important;
+}
 }
 
 body {
