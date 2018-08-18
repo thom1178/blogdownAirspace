@@ -915,3 +915,6 @@ table#DataTables_Table_0.display.dataTable.no-footer {
     margin-top: 4%;
     border-color: #e7e7e7;
 }
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-retina.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+    margin: auto;
+}
