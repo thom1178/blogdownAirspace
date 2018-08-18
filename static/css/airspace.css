@@ -22,6 +22,12 @@
 /*--
 	Common Css
 --*/
+@media (min-width: 992px){
+  .col-md-6 {
+    width: 50%;
+}
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -874,4 +880,7 @@ h2#gTitle {
 }
 .container {
     padding-top: 5%;
+}
+.container.bl {
+    width: 100%;
 }

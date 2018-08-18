@@ -11,9 +11,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Plotly for College Analysis
 
+Community colleges for many is a stepping stone to a larger dream of four year university. However, many of the risk factors that prevent students from succeeding in school are highly prevelant in the student body of 2-year institutions. 
+
 In this post, we explore open college data. This dataset includes the name of the college, the aggregated number of people who passed a particular subject by transfer level and race. 
 
-Let's read out data and take a look:
+Let's read our data and take a look:
 
 There is a wonderful package called `DT` that creates interactive plots in HTML. It even comes with a search feature. Check it out. 
 ```{r dataload, warning=FALSE, echo=F, results='hide'}

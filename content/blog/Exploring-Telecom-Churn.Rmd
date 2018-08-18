@@ -1,0 +1,205 @@
+---
+title: "Predicting Churn"
+author: "Jamel Thomas"
+date: "8/16/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Telecom Churn
+
+Although there are many examples, churn prediction is one of the classical applications of Data Science that works. Churn prediction gives businessmen and bussinesswomen the power to catch those consumers who are likely to leave the company. They can in turn take appropriate measure to keep their business. In this project, we consider a dataset of 7,043 observations. The goal here is to predict, with a fair amount of accuracy, which observations are likely to churn. 
+
+```{r echo=F}
+churn <- read.csv("/Users/Jamel/Downloads/WA_Fn-UseC_-Telco-Customer-Churn.csv", header = T)
+```
+
+
+
+```{r barplot}
+#Make a function for barplots
+
+plot.barplot <- function (x, xname = NULL, fillname = NULL, prop = F){
+  if(!("package:ggplot2" %in% search()) )require(ggplot2)
+  if(!(is.null(xname) | is.null(fillname))){
+    t <- table(x[[xname]], x[[fillname]])
+    if(prop)   t <- prop.table(t)
+    df <- data.table::data.table(t)
+    colnames(df) <- c(paste(xname), paste(fillname), "Frequency")
+    if( is.null( names(x) ) ){
+     return("Please pass a data.table() with column names")
+    }else{
+      g <- ggplot(df, aes(x = df[[xname]], y = Frequency, fill = df[[fillname]])) + 
+        geom_bar(stat = "identity", position = "dodge") + ylab("Frequency") + 
+        xlab(paste(xname) )+ guides(fill=guide_legend(title=paste(fillname))) + 
+        theme_minimal()
+      print(g)
+      return(t)
+    }
+  }else{
+    return("Please use both a xname and fillname")
+  }
+}
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r }
+require(ggplot2)
+require(magrittr) #Load Packages
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r }
+str(churn)
+DT::datatable(churn[,c(1:2,16:21)])
+
+summary(churn)
+
+```
+
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r, fig.align="center"}
+
+temp <- churn[churn$Churn == "Yes", ]
+var <- temp$Contract  # the categorical data 
+
+nrows <- 10
+df <- expand.grid(y = 1:nrows, x = 1:nrows)
+categ_table <- round(table(var) * ((nrows*nrows)/(length(var))))
+categ_table[1] <- categ_table[1] - 1 #Adjust
+
+df$category <- factor(rep(names(categ_table), categ_table))  
+# NOTE: if sum(categ_table) is not 100 (i.e. nrows^2), it will need adjustment to make the sum to 100.
+
+## Plot
+ggplot(df, aes(x = x, y = y, fill = category)) + 
+  geom_tile(color = "black", size = 0.5) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0), trans = 'reverse') +
+  scale_fill_brewer(palette = "Set3") +
+  labs(title="Customer churn % (+)", subtitle="Contract Type",
+       caption="Telecom") + 
+  theme(
+    plot.title = element_text(size = rel(1.2)),
+    axis.text = element_blank(),
+    axis.title = element_blank(),
+    axis.ticks = element_blank(),
+    legend.title = element_blank(),
+    legend.position = "right")
+
+
+
+```
+
+
+```{r, echo=F, fig.align='center'}
+temp <- churn[churn$Churn == "No", ]
+var <- temp$Contract  # the categorical data 
+
+nrows <- 10
+df <- expand.grid(y = 1:nrows, x = 1:nrows)
+categ_table <- round(table(var) * ((nrows*nrows)/(length(var))))
+
+df$category <- factor(rep(names(categ_table), categ_table))  
+# NOTE: if sum(categ_table) is not 100 (i.e. nrows^2), it will need adjustment to make the sum to 100.
+
+## Plot
+ggplot(df, aes(x = x, y = y, fill = category)) + 
+  geom_tile(color = "black", size = 0.5) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0), trans = 'reverse') +
+  scale_fill_brewer(palette = "Set3") +
+  labs(title="Customer churn % (-)", subtitle="Contract Type",
+       caption="Telecom") + 
+  theme(
+    plot.title = element_text(size = rel(1.2)),
+    axis.text = element_blank(),
+    axis.title = element_blank(),
+    axis.ticks = element_blank(),
+    legend.title = element_blank(),
+    legend.position = "right")
+
+
+
+```
+
+### Exploring 
+
+```{r, fig.align="center"}
+
+plot.barplot(x = churn, 
+             xname = "Churn",
+             fillname = "Contract")
+plot.barplot(churn, 
+             xname = "Churn" ,
+             fillname = "Dependents")
+plot.barplot(churn, 
+             xname = "Churn", 
+             fillname = "StreamingMovies")
+plot.barplot(churn, 
+             xname = "Churn", 
+             fillname = "PaymentMethod") 
+
+ggplot(churn, aes(x = Churn, y = tenure, fill= Contract)) + 
+  geom_boxplot() + theme_minimal()
+ggplot(churn, aes(x = Churn, y = tenure)) + 
+  geom_boxplot() + theme_minimal()
+ggplot(churn, aes(x = Churn, y = tenure, fill= TechSupport)) + 
+  geom_boxplot() + facet_wrap(~SeniorCitizen)+ theme_minimal()
+
+ggplot(churn, aes(x = Churn, y = MonthlyCharges, fill= Contract)) + 
+  geom_boxplot() + theme_minimal()
+
+ggplot(churn, aes(x = tenure, y = TotalCharges, color = Contract)) + geom_point( ) + geom_smooth()+ theme_minimal()
+ggplot(churn, aes(x = MonthlyCharges, y = TotalCharges, color = Contract)) + geom_point( ) + geom_smooth()+ theme_minimal()
+
+ggplot(churn, aes(x = tenure, y = MonthlyCharges, color = Churn)) + 
+  geom_point( )+ geom_smooth()+ facet_wrap(~factor(InternetService))+ theme_minimal()
+
+ggplot(churn, aes(x = Churn, y = tenure, fill = InternetService)) + 
+  geom_boxplot() + facet_wrap(~TechSupport, nrow = 1)+ theme_minimal()
+
+ggplot(churn, aes(x = MonthlyCharges, fill = Churn)) + 
+  geom_histogram() + theme_minimal()#Monthly Charges by Churn
+
+ggplot(churn, aes(x = MonthlyCharges, fill = TechSupport)) + 
+  geom_histogram() + theme_minimal()
+ggplot(churn, aes(x = MonthlyCharges, fill = InternetService)) + 
+  geom_histogram() + theme_minimal()
+ggplot(churn, aes(x = TotalCharges, fill = Contract)) + 
+  geom_histogram() + facet_wrap(~InternetService) + theme_minimal()
+ ggplot(churn, aes(x = tenure, y = MonthlyCharges, color = InternetService)) + 
+  geom_point( )+ geom_smooth()+ theme_minimal()
+
+```
+
+### Model Building
+
+```{r, fig.align="center"}
+
+churn$Churn <- factor(churn$Churn)
+churn$SeniorCitizen <- factor(churn$SeniorCitizen )
+fit <- glm(Churn ~ SeniorCitizen + MonthlyCharges + tenure + Contract +
+             PaymentMethod +TechSupport, data = churn, family = "binomial")
+summary(fit)
+exp(coef(fit))
+exp(cbind(OR = coef(fit), confint(fit)))
+
+tree = rpart::rpart(Churn ~ SeniorCitizen + MonthlyCharges + tenure + Contract +
+               PaymentMethod +TechSupport + Dependents , data = churn)
+rpart.plot::rpart.plot(tree)
+
+```
