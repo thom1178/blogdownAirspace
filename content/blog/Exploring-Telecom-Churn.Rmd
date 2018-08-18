@@ -53,7 +53,7 @@ You can also embed plots, for example:
 ```{r }
 require(ggplot2)
 require(magrittr) #Load Packages
-
+library(flipPlots)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
@@ -72,6 +72,17 @@ summary(churn)
 You can also embed plots, for example:
 
 ```{r, fig.align="center"}
+
+
+my.data <- cbind(churn,data.frame(num = 1) )
+my.data$SeniorCitizen <- factor(my.data$SeniorCitizen)
+my.data2 <- aggregate(num~. , data = my.data[, c(7:8, 12, 16,21, 22)], sum)
+  
+  
+
+SankeyDiagram(my.data2[, - dim(my.data2)[2]],
+              link.color = "Source", 
+              weights = my.data2$num) 
 
 temp <- churn[churn$Churn == "Yes", ]
 var <- temp$Contract  # the categorical data 

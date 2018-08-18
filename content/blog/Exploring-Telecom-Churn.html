@@ -7,13 +7,13 @@ output: html_document
 
 <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
-<link href="/rmarkdown-libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
 <script src="/rmarkdown-libs/datatables-binding/datatables.js"></script>
 <link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="/rmarkdown-libs/dt-core/js/jquery.dataTables.min.js"></script>
-<link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
+<script src="/rmarkdown-libs/d3/d3.min.js"></script>
+<script src="/rmarkdown-libs/sankey/sankey.js"></script>
+<script src="/rmarkdown-libs/sankeyNetwork-binding/sankeyNetwork.js"></script>
 
 
 <div id="telecom-churn" class="section level2">
@@ -50,6 +50,7 @@ plot.barplot &lt;- function (x, xname = NULL, fillname = NULL, prop = F){
 <pre><code>## Loading required package: ggplot2</code></pre>
 <pre class="r"><code>require(magrittr) #Load Packages</code></pre>
 <pre><code>## Loading required package: magrittr</code></pre>
+<pre class="r"><code>library(flipPlots)</code></pre>
 <p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
 <pre class="r"><code>str(churn)</code></pre>
 <pre><code>## &#39;data.frame&#39;:    7043 obs. of  21 variables:
@@ -138,6 +139,17 @@ plot.barplot &lt;- function (x, xname = NULL, fillname = NULL, prop = F){
 <div id="including-plots-1" class="section level2">
 <h2>Including Plots</h2>
 <p>You can also embed plots, for example:</p>
+<pre class="r"><code>my.data &lt;- cbind(churn,data.frame(num = 1) )
+my.data$SeniorCitizen &lt;- factor(my.data$SeniorCitizen)
+my.data2 &lt;- aggregate(num~. , data = my.data[, c(7:8, 12, 16,21, 22)], sum)
+  
+  
+
+SankeyDiagram(my.data2[, - dim(my.data2)[2]],
+              link.color = &quot;Source&quot;, 
+              weights = my.data2$num) </code></pre>
+<div id="htmlwidget-2" style="width:672px;height:480px;" class="sankeyNetwork html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2">{"x":{"links":{"source":[0,1,1,2,2,2,3,3,4,4,4,5,5,5,6,6,6,7,7,7,8,8,9,9,10,10],"target":[3,2,4,5,6,7,5,7,5,6,7,8,9,10,8,9,10,8,9,10,11,12,11,12,11,12],"value":[682,3390,2971,1443,1184,763,377,305,1275,342,1354,2394,463,238,524,364,638,957,646,819,2220,1655,1307,166,1647,48],"group":["0","1","1","2","2","2","3","3","4","4","4","5","5","5","6","6","6","7","7","7","8","8","9","9","10","10"]},"nodes":{"name":["PhoneService: No","PhoneService: Yes","MultipleLines: No","MultipleLines: No phone service","MultipleLines: Yes","DeviceProtection: No","DeviceProtection: No internet service","DeviceProtection: Yes","Contract: Month-to-month","Contract: One year","Contract: Two year","Churn: No","Churn: Yes"],"group":["0","1","2","3","4","5","6","7","8","9","10","11","12"]},"options":{"NodeID":"name","NodeGroup":"group","LinkGroup":"group","colourScale":"d3.scaleOrdinal(d3.schemeCategory20);","fontSize":12,"fontFamily":"Times New Roman","nodeWidth":30,"nodePadding":10,"units":"","margin":{"top":null,"right":null,"bottom":null,"left":null},"iterations":32,"sinksRight":true}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>temp &lt;- churn[churn$Churn == &quot;Yes&quot;, ]
 var &lt;- temp$Contract  # the categorical data 
 
@@ -164,7 +176,7 @@ ggplot(df, aes(x = x, y = y, fill = category)) +
     axis.ticks = element_blank(),
     legend.title = element_blank(),
     legend.position = &quot;right&quot;)</code></pre>
-<p><img src="/blog/Exploring-Telecom-Churn_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><img src="/blog/Exploring-Telecom-Churn_files/figure-html/unnamed-chunk-4-2.png" width="672" style="display: block; margin: auto;" /></p>
 <p><img src="/blog/Exploring-Telecom-Churn_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
 <div id="exploring" class="section level3">
 <h3>Exploring</h3>
