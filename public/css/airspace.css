@@ -32,7 +32,9 @@ p img {
     width: 100%;
     height:100%;
 }
-  
+  g.legend {
+    display: none;
+}
 }
 
 body {
@@ -896,4 +898,7 @@ div#htmlwidget-2 {
 
 }
 
-
+.plotly.html-widget.html-widget-static-bound.js-plotly-plot{
+  width:100% !important;
+  
+}
