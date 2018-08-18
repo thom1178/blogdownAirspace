@@ -24,7 +24,7 @@
 --*/
 @media (min-width: 992px){
   .col-md-6 {
-    width: 50%;
+    width: 80%;
 }
 }
 
@@ -887,3 +887,4 @@ h2#gTitle {
 div#htmlwidget-2 {
     margin: auto;
 }
+

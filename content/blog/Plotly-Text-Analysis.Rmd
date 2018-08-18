@@ -9,7 +9,6 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Plotly for College Analysis
 
 Community colleges for many is a stepping stone to a larger dream of four year university. However, many of the risk factors that prevent students from succeeding in school are highly prevelant in the student body of 2-year institutions. 
 

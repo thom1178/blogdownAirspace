@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/blog/flex-dashboards-blog/</guid>
-      <description>Flex Dashboards: Everyone knows high-level languages are wonderful. The issues of yester-year are long gone; we no longer have to build dashboards from scratch. Being able to query data, and display directly through R is here, and I don’t see it going anywhere anytime soon.
+      <description>Everyone knows high-level languages are wonderful. The issues of yester-year are long gone; we no longer have to build dashboards from scratch. Being able to query data, and display directly through R is here, and I don’t see it going anywhere anytime soon.
 Flexdashboard is an open source package in R that allows users to display dashboards directly in browser. It also has publishing support through RStudio. Assuming you have moderate traffic (like me), it’s perfect!</description>
     </item>
     
@@ -26,7 +26,7 @@ Flexdashboard is an open source package in R that allows users to display dashbo
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/blog/plotly-text-analysis/</guid>
-      <description>Plotly for College Analysis Community colleges for many is a stepping stone to a larger dream of four year university. However, many of the risk factors that prevent students from succeeding in school are highly prevelant in the student body of 2-year institutions.
+      <description>Community colleges for many is a stepping stone to a larger dream of four year university. However, many of the risk factors that prevent students from succeeding in school are highly prevelant in the student body of 2-year institutions.
 In this post, we explore open college data. This dataset includes the name of the college, the aggregated number of people who passed a particular subject by transfer level and race.</description>
     </item>
     
@@ -36,7 +36,7 @@ In this post, we explore open college data. This dataset includes the name of th
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/blog/exploring-telecom-churn/</guid>
-      <description>Telecom Churn Although there are many examples, churn prediction is one of the classical applications of Data Science that works. Churn prediction gives businessmen and bussinesswomen the power to catch those consumers who are likely to leave the company. They can in turn take appropriate measure to keep their business. In this project, we consider a dataset of 7,043 observations. The goal here is to predict, with a fair amount of accuracy, which observations are likely to churn.</description>
+      <description>Although there are many examples, churn prediction is one of the classical applications of Data Science that works. Churn prediction gives businessmen and bussinesswomen the power to catch those consumers who are likely to leave the company. They can in turn take appropriate measure to keep their business. In this project, we consider a dataset of 7,043 observations. The goal here is to predict, with a fair amount of accuracy, which observations are likely to churn.</description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@ In this post, we explore open college data. This dataset includes the name of th
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/blog/python-in-rstudio/</guid>
-      <description>Python in R Markdown R Markdown supports Python integration with the package reticulate.The nice thing about R Markdown is that it is the first scripting language I have ever learned. Therefore, I am almost too comfortable with it. It is my go to for most of my project because it’s so easy to get a proof of concept with new ideas. The downfall of it - until now - is that I was unaware that we could use PYTHON IN R MARKDOWN!</description>
+      <description>R Markdown supports Python integration with the package reticulate.The nice thing about R Markdown is that it is the first scripting language I have ever learned. Therefore, I am almost too comfortable with it. It is my go to for most of my project because it’s so easy to get a proof of concept with new ideas. The downfall of it - until now - is that I was unaware that we could use PYTHON IN R MARKDOWN!</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@ In this post, we explore open college data. This dataset includes the name of th
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/blog/sql-and-r/</guid>
-      <description>SQL: SQL is a querying language used to manipulate databases. On its own, it is a powerful tool in any Data Scientist’s toolbox. When you pair SQL with R (or Python), you have indespensible foundations to conduct even the basic analytics. This is not so much a lesson on SQL, but a lesson on connecting SQL with R via various packages. Moreover, we will use the packages dbplyr and dplyr to manipulate the datasets in a later blog.</description>
+      <description>SQL is a querying language used to manipulate databases. On its own, it is a powerful tool in any Data Scientist’s toolbox. When you pair SQL with R (or Python), you have indespensible foundations to conduct even the basic analytics. This is not so much a lesson on SQL, but a lesson on connecting SQL with R via various packages. Moreover, we will use the packages dbplyr and dplyr to manipulate the datasets in a later blog.</description>
     </item>
     
     <item>
@@ -63,7 +63,7 @@ In this post, we explore open college data. This dataset includes the name of th
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/blog/where-have-i-been/</guid>
-      <description>Where Am I from? I began this blog in the summer of 2018, mostly because I needed a place to put all of the things I do for fun. What better way than to build your own website and put all that stuff there? I have come across this beautiful post from the D3js website. It creates a plot of where the author has been.</description>
+      <description>I began this blog in the summer of 2018, mostly because I needed a place to put all of the things I do for fun. What better way than to build your own website and put all that stuff there? I have come across this beautiful post from the D3js website. It creates a plot of where the author has been. I will recreate the same plot here, but with the leaflet package in R.</description>
     </item>
     
   </channel>

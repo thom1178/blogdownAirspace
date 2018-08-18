@@ -9,7 +9,6 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## SQL: 
 
 SQL is a querying language used to manipulate databases. On its own, it is a powerful tool in any Data Scientist's toolbox. When you pair SQL with R (or Python), you have indespensible foundations to conduct even the basic analytics. This is not so much a lesson on SQL, but a lesson on connecting SQL with R via various packages. Moreover, we will use the packages `dbplyr` and `dplyr` to manipulate the datasets in a later blog. 
 
