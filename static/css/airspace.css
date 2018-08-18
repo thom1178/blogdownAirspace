@@ -35,6 +35,9 @@ p img {
   g.legend {
     display: none;
 }
+.datatables.html-widget.html-widget-static-bound {
+    display: none;
+}
 }
 
 body {
@@ -901,4 +904,11 @@ div#htmlwidget-2 {
 .plotly.html-widget.html-widget-static-bound.js-plotly-plot{
   width:100% !important;
   
+}
+table#DataTables_Table_0.display.dataTable.no-footer {
+    width: 10% !important;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    margin-top: 4%;
+    border-color: #e7e7e7;
 }
