@@ -17,7 +17,7 @@ churn <- read.csv("/Users/Jamel/Downloads/WA_Fn-UseC_-Telco-Customer-Churn.csv",
 
 
 
-```{r barplot}
+```{r barplot, echo = F}
 #Make a function for barplots
 
 plot.barplot <- function (x, xname = NULL, fillname = NULL, prop = F){
@@ -56,10 +56,7 @@ library(flipPlots)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 ```{r }
-str(churn)
 DT::datatable(churn[,c(1:2,16:21)])
-
-summary(churn)
 
 ```
 

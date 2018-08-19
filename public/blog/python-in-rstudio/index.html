@@ -109,40 +109,34 @@
 	            <p><p>R Markdown supports Python integration with the package <code>reticulate</code>.The nice thing about R Markdown is that it is the first scripting language I have ever learned. Therefore, I am almost too comfortable with it. It is my go to for most of my project because it’s so easy to get a proof of concept with new ideas. The downfall of it - until now - is that I was unaware that we could use PYTHON IN R MARKDOWN! Mind Blown! It sounds so easy too; duh, you could use Python in R Markdown this is 2018. But honestly, it has never crossed my mind to try… until now.</p>
 <p>It is fairly easy to get started. Just install the package and run! Here is a list of all supported languages.</p>
 <pre class="r"><code>names(knitr::knit_engines$get())</code></pre>
-<pre><code>##  [1] &quot;awk&quot;         &quot;bash&quot;        &quot;coffee&quot;      &quot;gawk&quot;        &quot;groovy&quot;     
-##  [6] &quot;haskell&quot;     &quot;lein&quot;        &quot;mysql&quot;       &quot;node&quot;        &quot;octave&quot;     
-## [11] &quot;perl&quot;        &quot;psql&quot;        &quot;Rscript&quot;     &quot;ruby&quot;        &quot;sas&quot;        
-## [16] &quot;scala&quot;       &quot;sed&quot;         &quot;sh&quot;          &quot;stata&quot;       &quot;zsh&quot;        
-## [21] &quot;highlight&quot;   &quot;Rcpp&quot;        &quot;tikz&quot;        &quot;dot&quot;         &quot;c&quot;          
-## [26] &quot;fortran&quot;     &quot;fortran95&quot;   &quot;asy&quot;         &quot;cat&quot;         &quot;asis&quot;       
-## [31] &quot;stan&quot;        &quot;block&quot;       &quot;block2&quot;      &quot;js&quot;          &quot;css&quot;        
-## [36] &quot;sql&quot;         &quot;go&quot;          &quot;python&quot;      &quot;julia&quot;       &quot;theorem&quot;    
-## [41] &quot;lemma&quot;       &quot;definition&quot;  &quot;corollary&quot;   &quot;proposition&quot; &quot;example&quot;    
-## [46] &quot;exercise&quot;    &quot;proof&quot;       &quot;remark&quot;      &quot;solution&quot;</code></pre>
 <pre class="r"><code>install.packages(&quot;reticulate&quot;)
 library(reticulate)</code></pre>
 <p>You will need to use <code>&quot;``` {python} CODE CHUNK HERE ```&quot;</code> to get started.</p>
-<pre class="python"><code>import sys
-print(sys.version)</code></pre>
-<pre><code>## 2.7.10 (default, Oct  6 2017, 22:29:07) 
-## [GCC 4.2.1 Compatible Apple LLVM 9.0.0 (clang-900.0.31)]</code></pre>
-<div id="including-plots" class="section level2">
-<h2>Including Plots</h2>
-<p>You can also embed plots, for example:</p>
-<pre class="python"><code>import matplotlib.pyplot as plt
-plt.plot([6,8,10, 12, 21, 44,47, 50, 51])
+<p>If you would like to use Python 3, simply use terminal and type <code>which python</code> and paste that directory in <code>engine.path = '{PATH}'</code>.</p>
+<pre class="python"><code>import matplotlib
+import numpy as np
+import matplotlib.pyplot as plt
+np.random.seed(19680801)
+# example data
+mu = 100  # mean of distribution
+sigma = 15  # standard deviation of distribution
+x = mu + sigma * np.random.randn(437)
+num_bins = 50
+fig, ax = plt.subplots()
+# the histogram of the data
+n, bins, patches = ax.hist(x, num_bins, density=1)
+# add a &#39;best fit&#39; line
+y = ((1 / (np.sqrt(2 * np.pi) * sigma)) *
+     np.exp(-0.5 * (1 / sigma * (bins - mu))**2))
+ax.plot(bins, y, &#39;--&#39;)
+ax.set_xlabel(&#39;Smarts&#39;)
+ax.set_ylabel(&#39;Probability density&#39;)
+ax.set_title(r&#39;Histogram of IQ: $\mu=100$, $\sigma=15$&#39;)
+# Tweak spacing to prevent clipping of ylabel
+fig.tight_layout()
 plt.show()</code></pre>
-<p><img src="/blog/Python-in-RStudio_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<!-- And there you have it! You can eve mix and match! If you have a global variable, `y`, we can manipulate it in R or Python. -->
-<!-- `PYTHON` -->
-<!-- ```{python} -->
-<!-- y = 10 -->
-<!-- print(y) -->
-<!-- ``` -->
-<div id="go-and-create" class="section level3">
-<h3>Go and create!</h3>
-</div>
-</div>
+<p><img src = "https://matplotlib.org/_images/sphx_glr_histogram_features_001.png"/></p>
+<p>This code is directly from matplotlib.org.</p>
 </p>
 	          </div>
 	        </div>

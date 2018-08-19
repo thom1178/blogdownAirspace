@@ -22,6 +22,14 @@
 /*--
 	Common Css
 --*/
+@media (min-width: 992px){
+.col-md-6 {
+    width: 33%;
+}
+.col-md-6.col-md-offset-6{
+   width: 50%;
+}
+}
 @media (max-width: 992px){
   div#htmlwidget-2 {
   
@@ -917,4 +925,8 @@ table#DataTables_Table_0.display.dataTable.no-footer {
 }
 .leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-retina.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
     margin: auto;
+}
+#intro .block img {
+    padding: 10px;
+    width: 100%;
 }

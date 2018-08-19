@@ -4,15 +4,10 @@ author: "Jamel Thomas"
 date: "04 August 2018"
 output: html_document
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-
 Community colleges for many is a stepping stone to a larger dream of four year university. However, many of the risk factors that prevent students from succeeding in school are highly prevelant in the student body of 2-year institutions. 
 
-In this post, we explore open college data. This dataset includes the name of the college, the aggregated number of people who passed a particular subject by transfer level and race. 
+In this post, we explore open college data. This dataset includes the name of the college, the aggregated number of people who passed a particular subject by transfer level and race. The data itself contains information on race, and college name. It also contains information on the pass rate/number of students who passed by subject. 
+
 
 Let's read our data and take a look:
 
@@ -32,15 +27,10 @@ school <- read.table(url, header = T)
 ```
 
 
-```{r dt, warning=F, echo=T, eval=T}
-DT::datatable(school)
-```
-
-
 ## ggplot
 The ggplot package is essentially the bread and butter of beautiful and easy to use plots. We will start with `data = school` (duh), and `x = ethnicity, y = sum`. The "sum"" here is just the total number of students who passed given course. 
 
-```{r pressure, echo=T, fig= T, fig.align='center', fig.width=10}
+```{r pressure, echo=T, fig= T, fig.align='center'}
 g <- ggplot(data = school,
             aes(x = ethnicity, y = sum, fill = group)) + geom_boxplot() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) #Vertical Axis
@@ -52,14 +42,14 @@ In order to make this plot interactive, we have to do something really challengi
 
 Type the following line of code. 
 
-```{r plotly, echo=T, fig= T, fig.align='center', fig.width=10}
+```{r plotly, echo=T, fig= T, fig.align='center'}
 ggplotly(g)
 ```
 
 That's it! We can now do all sorts of amazing plots with minimal code! Let's look as some more stuff. 
 
 
-```{r bar, echo=T, fig= T, fig.align='center', fig.width=10}
+```{r bar, echo=T, fig= T, fig.align='center'}
 g <- ggplot(data = school,
             aes(x = ethnicity, y = success, fill = ethnicity)) +
   geom_bar(stat = "identity")  +
@@ -70,7 +60,7 @@ ggplotly(g)
 
 Make sure you clean your data!
 
-```{r scatter, echo=T, fig= T, fig.align='center', fig.width=10}
+```{r scatter, echo=T, fig= T, fig.align='center'}
 #Refactor
 school$group <- factor(school$group,
                        levels = c("One Level Below Transfer",
@@ -86,7 +76,7 @@ ggplotly(g)
 ```
 
 
-```{r scatter2, echo=T, fig= T, fig.align='center', fig.width=10}
+```{r scatter2, echo=T, fig= T, fig.align='center'}
 
 g <- ggplot(data = school,
             aes(x = subject, y = sum, color = ethnicity)) +
@@ -96,7 +86,7 @@ ggplotly(g)
 ```
 
 
-```{r scatter3, echo=T, fig= T, fig.align='center', fig.width=10}
+```{r scatter3, echo=T, fig= T, fig.align='center'}
 
 g <- ggplot(data = school,
             aes(x = group, y = sum, fill = subject)) +
