@@ -44,11 +44,10 @@ plot.barplot <- function (x, xname = NULL, fillname = NULL, prop = F){
 
 ```
 
-## Including Plots
+## Exploratory Data Analysis
 
-You can also embed plots, for example:
 
-```{r }
+```{r echo = F, warning=F}
 require(ggplot2)
 require(magrittr) #Load Packages
 library(flipPlots)
@@ -192,9 +191,19 @@ ggplot(churn, aes(x = TotalCharges, fill = Contract)) +
 
 ```
 
-### Model Building
+## Model Building
 
+For this mini-project, we will use logistic regression, decision trees, and k-nearest neighbors.
 ```{r, fig.align="center"}
+set.seed(100)
+indx <- sample(1:nrow(churn), .8*nrow(churn), replace = F)
+
+```
+
+### Logistic Regression
+Since I am only using logistic regression to explore relationships, and I'm not necessarily too concerned with the accuracy of this particular model, I will hold off on splitting the data 80-20 until the subsequent models. 
+
+```{r}
 
 churn$Churn <- factor(churn$Churn)
 churn$SeniorCitizen <- factor(churn$SeniorCitizen )
@@ -204,8 +213,36 @@ summary(fit)
 exp(coef(fit))
 exp(cbind(OR = coef(fit), confint(fit)))
 
+
+```
+Some intersting things to point out: based on the data, those who pay with elecronic check have a 50% higher odds of churning over the baseline. Moreover, a one unit increase in montly charges cost corresponds with a 2% greater odds of churning.
+
+```{r, fig.align="center"}
+
 tree = rpart::rpart(Churn ~ SeniorCitizen + MonthlyCharges + tenure + Contract +
                PaymentMethod +TechSupport + Dependents , data = churn)
 rpart.plot::rpart.plot(tree)
 
+
+
+train <- churn[indx,c("MonthlyCharges", "tenure", "TotalCharges", "Churn")]
+test <- churn[-indx,c("MonthlyCharges", "tenure", "TotalCharges", "Churn")]
+
+train <- na.omit(train)
+test <- na.omit(test)
+kn <- class::knn(train[,-4], test[,-4],train[,4] , k = 22, l = 4, prob = F, use.all = TRUE)
+length(kn)
+dim(test)
+
+df <- table(Prob = kn, Obs = test[,"Churn"]) %>% data.frame()
+
+ggplot(df, aes(x = Prob, y = Freq, fill = Obs)) + 
+  geom_bar(stat = 'identity', position = "dodge") + theme_light()
+
+table(Prob = kn, Obs = test[,"Churn"])
+table(Prob = kn, Obs = test[,"Churn"]) %>% prop.table()
+
+
 ```
+
+This final model was able to achieve about 80% accuracy. KNN is very competitve with logistic regression and decision trees out of the box model.
