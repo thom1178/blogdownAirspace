@@ -29,6 +29,10 @@
 .col-md-6.col-md-offset-6{
    width: 50%;
 }
+.blog-post p {
+    margin: 15px 0 20px;
+    min-height: 300px;
+}
 }
 @media (max-width: 992px){
   div#htmlwidget-2 {
@@ -49,6 +53,7 @@ p img {
 .leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-retina.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom{
   width:100% !important;
 }
+
 }
 
 body {
