@@ -89,7 +89,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   [params.contact]
     enable = true
     title = "Drop a line"
-    subtitle = "Don’t just take our word for it. Check out some of our latest work."
+    subtitle = "Don't just take our word for it. Check out some of our latest work."
     [params.contact.form]
       name = "Your name"
       email = "Your email"
