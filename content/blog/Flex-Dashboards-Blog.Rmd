@@ -25,7 +25,7 @@ require(flexdashboard)
 ```
 In order to build a Flexdashboard, you need start a new R Markdown document, and choose `From Template`. 
 
-<img src="https://jamelt.com/images/flexdashboar-Start.png" width="100%"  />
+<img src="https://jamelt.com/images/flexdashboar-Start.png" width="50%" />
 
  
  
@@ -33,11 +33,11 @@ In order to build a Flexdashboard, you need start a new R Markdown document, and
 
 <!-- ![](https://jamelt.com/images/flexdashboard-newfile.png | width=100) -->
 
-<img src="https://jamelt.com/images/flexdashboard-newfile.png" width="100%"  />
+<img src="https://jamelt.com/images/flexdashboard-newfile.png" width="50%"  />
 <br/><br/>
 The resulting document will be a flexdashboard template. Within the header of the file, you can include all of the startup code, ie. loading packages, loading flatfiles etc...
 
-<img src="https://jamelt.com/images/dash.png" width="100%"  />
+<img src="https://jamelt.com/images/dash.png" width="50%"  />
 
 Once you have the template, you can start adding interactive plots via plotly and leaflet! It's fairly simple to get started, and makes your blog look a lot more professional!
 
