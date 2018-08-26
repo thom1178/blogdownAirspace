@@ -5,4 +5,4 @@ This is the code used to build my personal website. I used the blogdown package 
 You can find my website at https://jamelt.com
 
 
-<img src = "https://ceem-ie.com/images/CEEM/CEEM_logo_FINAL_v2-01.png">
+<img src = "https://jamelt.com/site.png">
