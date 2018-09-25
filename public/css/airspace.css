@@ -22,38 +22,21 @@
 /*--
 	Common Css
 --*/
-@media (min-width: 992px)
-.col-md-6 {
+@media (min-width: 992px){
+  .col-md-6 {
     /* width: 30%; */
 }
-.col-md-6.col-md-offset-6{
-   width: 50%;
+
 }
+
+/*.col-md-6.col-md-offset-6{
+   width: 50%;
+   float:right;
+}*/
 .blog-post p {
     margin: 15px 0 20px;
     min-height: 300px;
 }
-}
-@media (max-width: 992px){
-  div#htmlwidget-2 {
-  
-    width: 100% !important;
-    height: 100% !important;
-}
-p img {
-    width: 100%;
-    height:100%;
-}
-  g.legend {
-    display: none;
-}
-.datatables.html-widget.html-widget-static-bound {
-    display: none;
-}
-.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-retina.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom{
-  width:100% !important;
-}
-
 }
 
 body {
@@ -914,7 +897,7 @@ h2#gTitle {
 }
 div#htmlwidget-2 {
     margin: auto;
-
+  width: 100% !important;
 }
 
 .plotly.html-widget.html-widget-static-bound.js-plotly-plot{
@@ -934,4 +917,25 @@ table#DataTables_Table_0.display.dataTable.no-footer {
 #intro .block img {
     padding: 10px;
     width: 100%;
+}
+@media (max-width: 992px){
+
+  div#htmlwidget-2 {
+  
+    width: 100% !important;
+    height: 100% !important;
+}
+    p img {
+    width: 100% !important;
+}
+  g.legend {
+    display: none;
+}
+.datatables.html-widget.html-widget-static-bound {
+    display: none;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-retina.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom{
+  width:100% !important;
+}
+
 }

@@ -165,6 +165,7 @@ hist(newFare)</code></pre>
 <pre class="r"><code>qqnorm(newFare)
 qqline(newFare) #The log-transform is more simple, we will use log</code></pre>
 <p><img src="/blog/Air-Fare-Mixed-Effects_files/figure-html/unnamed-chunk-2-2.png" width="672" style="display: block; margin: auto;" /> We attempted to aggregate the data by combining all common quarters together. This means that the data was divided into 4 quarters in terms of the business quarters for each year. The leftover 2 quarters were included in this dataset. When we attempted to fit a model to this data it did not yield better results than the original time-scale. We did the same thing with a yearly time-scale but were met with the same results.</p>
+<p><a id="my_chunk"></a></p>
 <pre class="r"><code>log.lme &lt;- lme(log(Avg.Fare) ~ Quarter + I(Quarter^2)+ Avg.Pass ,
      data = sub2, random = ~1|Route) #The model
 plot(log.lme)</code></pre>
