@@ -1,5 +1,5 @@
 ---
-title: "Mixed Effect Model for Air Fares"
+title: "Mixed Effects & Air Fares"
 author: "Jamel Thomas"
 date: "9/24/2018"
 output: html_document
@@ -8,8 +8,7 @@ output: html_document
 
 
 <p><img src = '/img/airfare/airfarePlot.png' style = 'width:100%'/></p>
-<p>In the United States, various factors affect the airfare prices that consumers see. An issue is that a single linear model may not fit the data, as prices can vary drastically across different routes. We will obtain Quarterly US Air Fare and Volume data and utilize a mixed effects model to predict air fare prices. The original dataset contains 108,602 observations and 14 attributes and there are no missing values. For the sake of simplicity, in this paper, we only consider a random sample of 50 routes as the original dataset contains 4177 routes. Moreover, for every route, there are 26 quarters for which the average fare price is taken. Therefore, we simplify the problem dramatically with the exclusion of most of the routes. Our objective is to build a linear mixed effects model to predict the average fare price for each route.</p>
-<p>First, we read in the data and load the packages that we will be using.</p>
+<p>In the United States, various factors affect the airfare prices that consumers see. An issue is that a single linear model may not fit the data, as prices can vary drastically across different routes. We will obtain Quarterly US Air Fare and Volume data and utilize a mixed effects model to predict air fare prices. The original dataset contains 108,602 observations and 14 attributes and there are no missing values. For the sake of simplicity, in this paper, we only consider a random sample of 50 routes as the original dataset contains 4177 routes.</p>
 <pre class="r"><code>library(ggplot2)
 library(ggmap)
 library(nlme)
@@ -36,6 +35,7 @@ head(rout, 10)</code></pre>
 ## 8      1       8   234.43    99.01
 ## 9      1       9   204.96    97.17
 ## 10     1      10   203.77   108.47</code></pre>
+<p>Moreover, for every route, there are 26 quarters for which the average fare price is taken. Therefore, we simplify the problem dramatically with the exclusion of most of the routes. Our objective is to build a linear mixed effects model to predict the average fare price for each route.</p>
 <p>It’s unknown how the data was collected, but I assumed that the data is obtained from one airline company. The response variable is the Average Fare. The covariates include the route number, the quarter, average weekly passengers, departing airport, arrival airport, the population of the departing city, the population of the arrival city, the distance traveled, the angle of the route, and the longitude and latitude of both departing and arriving airports. Table 1 shows the summary statistics for the subsetted dataset.</p>
 <p style="text-align:center;">
 <img src = '/img/airfare/summaryStats.png' style = 'width:50%;'/>

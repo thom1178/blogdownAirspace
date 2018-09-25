@@ -22,9 +22,9 @@
 /*--
 	Common Css
 --*/
-@media (min-width: 992px){
+@media (min-width: 992px)
 .col-md-6 {
-    width: 33%;
+    /* width: 30%; */
 }
 .col-md-6.col-md-offset-6{
    width: 50%;
