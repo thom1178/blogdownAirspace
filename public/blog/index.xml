@@ -21,6 +21,15 @@ Flexdashboard is an open source package in R that allows users to display dashbo
     </item>
     
     <item>
+      <title>Mixed Effect Model for Air Fares</title>
+      <link>/blog/air-fare-mixed-effects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/air-fare-mixed-effects/</guid>
+      <description>In the United States, various factors affect the airfare prices that consumers see. An issue is that a single linear model may not fit the data, as prices can vary drastically across different routes. We will obtain Quarterly US Air Fare and Volume data and utilize a mixed effects model to predict air fare prices. The original dataset contains 108,602 observations and 14 attributes and there are no missing values. For the sake of simplicity, in this paper, we only consider a random sample of 50 routes as the original dataset contains 4177 routes.</description>
+    </item>
+    
+    <item>
       <title>Plotly for College Analysis</title>
       <link>/blog/plotly-text-analysis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
