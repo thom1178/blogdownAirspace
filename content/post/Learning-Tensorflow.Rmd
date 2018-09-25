@@ -1,0 +1,33 @@
+---
+title: "Learning Tensorflow in Python"
+author: "Jamel Thomas"
+date: "9/16/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+Deep learning is all the rage. Today, we will cover the basics of deep learning, along with how to implement them in Tensorflow v 1.10.0. We start with the basics:
+
+## Tensorflow: 
+
+A tensor is a high dimensional mathematical array. Think of a two-dimensional array of numbers: a matix. This is a 2D tensor. The same goes for 3D matrices, 4D, etc...
+
+Tensorflow is a Python (Now in R) library that can express arbitrary computations via graphs. The graphs are made up of nodes and edges, where the nodes represent mathematical operations, and edges represent connected data computations. 
+
+We like to think of computations like this because we can recognize the connections between computations, limiting the number of computations we need to do for any given set of operations. This means that given a chunk of code, tensor flow may not need to calculate everything expressed, only those objects that are needed to obtain the result. 
+
+
+```{r packages, echo=FALSE}
+library(reticulate)
+```
+
+```{python , engine.path = '/anaconda3/bin/python'}
+import tensorflow as tf
+print(tf.VERSION)
+
+```
+
+
+

@@ -9,8 +9,6 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
-
 I began this blog in the summer of 2018, mostly because I needed a place to put all of the things I do for fun. What better way than to build your own website and put all that stuff there? I have come across this beautiful post from the D3js website. It creates a plot of where the author has been. I will recreate the same plot here, but with the leaflet package in R. 
 
 
