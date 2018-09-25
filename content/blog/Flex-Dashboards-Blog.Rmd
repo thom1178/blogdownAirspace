@@ -62,5 +62,4 @@ The following plot is a flexdashboard of Alternative Fuels Stations in the Unite
 
 #Result
 
-You can take a look at the dashboard I build here:
-https://jamelt.com/flex-dashboard-example
+<iframe src="https://jamelt.com/flex-dashboard-example" width="100%" height="1200" style="border: none;"></iframe>
