@@ -147,7 +147,7 @@ font header .navbar-default .navbar-nav li a:hover {
 	Slider Start
 --*/
 #slider {
-  background: url("../img/abstract.jpg") no-repeat;
+  background: url("../img/astronomy.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: 10% 0%;
@@ -816,7 +816,7 @@ font header .navbar-default .navbar-nav li a:hover {
 .post-title{
   color: #655E7A;
   font-size: 25px;
-  font-weight: 600;
+  font-weight: 400;
   display: block;
   margin-bottom: 10px;
 }
