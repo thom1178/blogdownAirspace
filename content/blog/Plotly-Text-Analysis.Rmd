@@ -4,7 +4,7 @@ author: "Jamel Thomas"
 date: "04 August 2018"
 output: html_document
 ---
-Community colleges for many is a stepping stone to a larger dream of four year university. However, many of the risk factors that prevent students from succeeding in school are highly prevelant in the student body of 2-year institutions. 
+Community colleges for many is a stepping stone to a larger dream of four year university. However, many of the risk factors that prevent students from succeeding in school are highly prevelant in the student body of 2-year institutions.
 
 In this post, we explore open college data. This dataset includes the name of the college, the aggregated number of people who passed a particular subject by transfer level and race. The data itself contains information on race, and college name. It also contains information on the pass rate/number of students who passed by subject. 
 
