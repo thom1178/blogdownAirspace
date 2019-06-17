@@ -879,6 +879,11 @@ footer .footer-manu ul li a:hover {
 main {
     margin-top: 25px;
 }
+.figure img {
+    width: 100%;
+}
+
+
 ul.address-block{
   padding: 0 20%;
 }
@@ -894,6 +899,11 @@ h2#gTitle {
 }
 .container.bl {
     width: 100%;
+}
+pre code {
+    
+    color: #3651a5;
+    
 }
 div#htmlwidget-2 {
     margin: auto;

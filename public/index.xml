@@ -61,6 +61,15 @@ summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
     </item>
     
     <item>
+      <title>Empty Shelf Detection with Keras</title>
+      <link>/blog/shelf-detection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/shelf-detection/</guid>
+      <description>With the coming of age of Artificial Intelligence, everyone wants to see how they can use their data to solve their business problems. For example, some Brick and Mortar stores are silently working on how they can stay competitive by predicting empty supermarket shelves. This leads to the idea that the store can automatically track which items are being pulled off of the shelves, and take the guesswork out stocking. With the advancements and neural networks and artificial intelligence, I wanted to see if we could predict the empty spaces on supermarket shelves, given a limited amount of data and no initial bounding boxes to train on.</description>
+    </item>
+    
+    <item>
       <title>Flexdashboards</title>
       <link>/blog/flex-dashboards-blog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
